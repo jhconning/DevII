@@ -22,7 +22,7 @@ edgeplot(50)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1650/3889447783.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1681/3889447783.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0medgeplot[0m[0;34m([0m[0;36m50[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'edgeplot' is not defined
