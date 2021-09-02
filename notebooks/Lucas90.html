@@ -346,24 +346,39 @@
 <p>Assume two countries with same aggregate production function, where <span class="math notranslate nohighlight">\(X\)</span> is capital stock and <span class="math notranslate nohighlight">\(L\)</span> is labor force:</p>
 <div class="math notranslate nohighlight">
 \[Y = A X^\beta L^{1-\beta}\]</div>
-<p><strong>in intensive or per-capita form</strong>:
-$<span class="math notranslate nohighlight">\(y = A x^\beta\)</span>$</p>
-<p>where
-$<span class="math notranslate nohighlight">\(y = \frac{Y}{L} \text{    and    } x = \frac{X}{L}\)</span>$</p>
+<p><strong>in intensive or per-capita form</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+y = A x^\beta
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+y = \frac{Y}{L} \text{    and    } x = \frac{X}{L}
+\]</div>
 <p><strong>Marginal Product of Capital (MPK) is:</strong></p>
 <div class="math notranslate nohighlight">
 \[r = A \beta x^{\beta -1}\]</div>
 <p><strong>Write MPK as a function of income per capita:</strong></p>
 <div class="math notranslate nohighlight">
-\[r = \beta A^\frac{1}{\beta} y^\frac{\beta -1}{\beta}\]</div>
+\[
+r = \beta A^\frac{1}{\beta} y^\frac{\beta -1}{\beta}
+\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[r = A \beta \left ( {\frac{y}{A}} \right ) ^\frac{\beta - 1}{\beta}\]</div>
+\[
+r = A \beta \left ( {\frac{y}{A}} \right ) ^\frac{\beta - 1}{\beta}
+\]</div>
 <p>Steps:</p>
 <div class="math notranslate nohighlight">
-\[y = A x^\beta  \]</div>
-<p>so
-$<span class="math notranslate nohighlight">\(x = \left ({\frac{y}{A}}  \right)^\frac{1}{\beta}   \)</span>$</p>
+\[
+y = A x^\beta  
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+x = \left ({\frac{y}{A}}  \right)^\frac{1}{\beta}
+\]</div>
 <p>substitute this into <span class="math notranslate nohighlight">\(r = A \beta x^{\beta -1}\)</span></p>
 </div>
 <div class="section" id="the-puzzle">
@@ -514,9 +529,14 @@ $<span class="math notranslate nohighlight">\(x = \left ({\frac{y}{A}}  \right)^
 <p>Human capital per worker differs substantially between USA and India. Let’s adapt the framework to take this into account.</p>
 <p>Redefine <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> to be output and capital per <em>effective</em> worker (replace every <span class="math notranslate nohighlight">\(L\)</span> by <span class="math notranslate nohighlight">\(E \cdot L\)</span>).</p>
 <div class="math notranslate nohighlight">
-\[y = \frac{AX^\beta (E \cdot L)^{(1-\beta)}}{E \cdot L}\]</div>
-<p>or
-$<span class="math notranslate nohighlight">\(y=Ax^\beta \cdot E ^{-\beta}\)</span>$</p>
+\[
+y = \frac{AX^\beta (E \cdot L)^{(1-\beta)}}{E \cdot L}
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+y=Ax^\beta \cdot E ^{-\beta}
+\]</div>
 <p>Lucas’ cites evidence from Anne Krueger that leads him to suggest a value of <span class="math notranslate nohighlight">\(E =5\)</span>, which is to say that for the same technology and capital a US worker produces five times as much as his/her Indian counterpart.</p>
 <p>To see this first note that if we take the ratio of US to Indian income per effective worker we get:</p>
 <div class="math notranslate nohighlight">
@@ -563,7 +583,6 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-
 
 <span class="k">def</span> <span class="nf">profit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
     <span class="k">return</span>  <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="n">mpx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">rho</span><span class="o">*</span><span class="n">x</span>

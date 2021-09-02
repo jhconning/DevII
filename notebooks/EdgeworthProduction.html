@@ -286,18 +286,6 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-section">
-   Code section
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-for-stolper-samuelson-line">
-     Code for Stolper Samuelson line
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
             </nav>
@@ -340,6 +328,110 @@
 </div>
 <div class="section" id="edgeworth-box-plots">
 <h2>Edgeworth Box plots<a class="headerlink" href="#edgeworth-box-plots" title="Permalink to this headline">¶</a></h2>
+<p>Click on the + to reveal the python code for the plots below.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ALPHA</span> <span class="o">=</span> <span class="mf">0.6</span>   <span class="c1"># capital share in agriculture</span>
+<span class="n">BETA</span> <span class="o">=</span> <span class="mf">0.4</span>   <span class="c1"># </span>
+
+<span class="n">KBAR</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">LBAR</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># =Pa/Pm  relative price of ag goods</span>
+
+<span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Agriculture Production function&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">K</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">G</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Manufacturing Production function&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">K</span><span class="o">**</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">budgetc</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">I</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">I</span><span class="o">/</span><span class="n">p2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">p1</span><span class="o">/</span><span class="n">p2</span><span class="p">)</span><span class="o">*</span><span class="n">c1</span>
+
+<span class="k">def</span> <span class="nf">isoq</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">mu</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">edgeworth</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">Kbar</span><span class="o">=</span><span class="n">KBAR</span><span class="p">,</span> <span class="n">Lbar</span><span class="o">=</span><span class="n">LBAR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;efficiency locus: &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="n">alpha</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">beta</span>
+    <span class="k">return</span> <span class="n">b</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">Kbar</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">Lbar</span><span class="o">-</span><span class="n">L</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">edgeplot</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">Kbar</span><span class="o">=</span><span class="n">KBAR</span><span class="p">,</span> <span class="n">Lbar</span><span class="o">=</span><span class="n">LBAR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Draw an edgeworth box</span>
+<span class="sd">    </span>
+<span class="sd">    arguments:</span>
+<span class="sd">    LA -- labor allocated to ag, from which calculate QA(Ka(La),La) </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KA</span> <span class="o">=</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">RTS</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">KA</span><span class="o">/</span><span class="n">LA</span><span class="p">)</span>
+    <span class="n">QA</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">KA</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">QM</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">Kbar</span><span class="o">-</span><span class="n">KA</span><span class="p">,</span><span class="n">Lbar</span><span class="o">-</span><span class="n">LA</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(LA,KA)=(</span><span class="si">{:4.1f}</span><span class="s2">, </span><span class="si">{:4.1f}</span><span class="s2">)  (QA, QM)=(</span><span class="si">{:4.1f}</span><span class="s2">, </span><span class="si">{:4.1f}</span><span class="s2">)  RTS=</span><span class="si">{:4.1f}</span><span class="s2">&quot;</span>
+          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span><span class="n">KA</span><span class="p">,</span><span class="n">QA</span><span class="p">,</span><span class="n">QM</span><span class="p">,</span><span class="n">RTS</span><span class="p">))</span>
+    <span class="n">La</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Lbar</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">La</span><span class="p">,</span><span class="n">Kbar</span><span class="p">,</span><span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span><span class="s1">&#39;k-&#39;</span><span class="p">)</span>
+    <span class="c1">#ax.plot(La, La,&#39;k--&#39;)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">isoq</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">QA</span><span class="p">,</span> <span class="n">alpha</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">Kbar</span><span class="o">-</span><span class="n">isoq</span><span class="p">(</span><span class="n">Lbar</span><span class="o">-</span><span class="n">La</span><span class="p">,</span> <span class="n">QM</span><span class="p">,</span> <span class="n">beta</span><span class="p">),</span><span class="s1">&#39;g-&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">KA</span><span class="p">,</span><span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">KA</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">KA</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$O_A$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">Lbar</span><span class="p">,</span><span class="n">Kbar</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$O_M$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$L_A -- Labor$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$K_A - Capital$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ppf</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span><span class="n">Kbar</span><span class="o">=</span><span class="n">KBAR</span><span class="p">,</span> <span class="n">Lbar</span><span class="o">=</span><span class="n">LBAR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Draw a production possibility frontier</span>
+<span class="sd">    </span>
+<span class="sd">    arguments:</span>
+<span class="sd">    LA -- labor allocated to ag, from which calculate QA(Ka(La),La) </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KA</span> <span class="o">=</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">RTS</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">KA</span><span class="o">/</span><span class="n">LA</span><span class="p">)</span>
+    <span class="n">QA</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span> <span class="n">KA</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">QM</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">Kbar</span><span class="o">-</span><span class="n">KA</span><span class="p">,</span><span class="n">Lbar</span><span class="o">-</span><span class="n">LA</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">QA</span><span class="p">,</span><span class="n">QM</span><span class="p">)</span>
+    <span class="n">La</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Lbar</span><span class="p">)</span>
+    <span class="n">Ka</span> <span class="o">=</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">Qa</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">Ka</span><span class="p">,</span><span class="n">La</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">Qm</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">Kbar</span><span class="o">-</span><span class="n">Ka</span><span class="p">,</span><span class="n">Lbar</span><span class="o">-</span><span class="n">La</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Qa</span><span class="p">,</span> <span class="n">Qm</span><span class="p">,</span><span class="s1">&#39;k-&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Q_A$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Q_B$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Here is and Edgeworth Box depicting the situation where <span class="math notranslate nohighlight">\(L_A = 50\)</span> units of labor are allocated to the agricultural sector and all other allocations are efficient (along the efficiency locus).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -348,14 +440,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1681</span><span class="o">/</span><span class="mf">3889447783.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">edgeplot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;edgeplot&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(LA,KA)=(50.0, 69.2)  (QA, QM)=(60.8, 41.2)  RTS= 2.1
 </pre></div>
 </div>
+<img alt="../_images/EdgeworthProduction_12_1.png" src="../_images/EdgeworthProduction_12_1.png" />
 </div>
 </div>
 <p>If you’re reading this using a jupyter server you can interact with the following plot, changing the technology parameters and position of the isoquant. If you are not this may appear blank or static.</p>
@@ -370,8 +458,9 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "c701b54261654596bb1bf91f88f6482d", "version_major": 2, "version_minor": 0}
-</script></div>
+{"version_major": 2, "version_minor": 0, "model_id": "3d1880976a454bc7bf0b001e8cda9a94"}
+</script><img alt="../_images/EdgeworthProduction_14_1.png" src="../_images/EdgeworthProduction_14_1.png" />
+</div>
 </div>
 <div class="section" id="the-production-possiblity-frontier">
 <h3>The Production Possiblity Frontier<a class="headerlink" href="#the-production-possiblity-frontier" title="Permalink to this headline">¶</a></h3>
@@ -385,7 +474,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/EdgeworthProduction_11_0.png" src="../_images/EdgeworthProduction_11_0.png" />
+<img alt="../_images/EdgeworthProduction_16_0.png" src="../_images/EdgeworthProduction_16_0.png" />
 </div>
 </div>
 </div>
@@ -442,154 +531,7 @@
 <h3>The Stolper Samuelson Theorem<a class="headerlink" href="#the-stolper-samuelson-theorem" title="Permalink to this headline">¶</a></h3>
 <p>The Stolper Samuelson theorem tells us how changes in the world relative price of products translates into changes in the relative price of factors and therefore in the distribution of income in society.</p>
 <p>The theorem states that an increase in the relative price of a good will lead to an increase in both the relative and the real price of the factor used intensively in the production of that good (and conversely to a decline in both the real and the relative price of the other factor).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssline</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/EdgeworthProduction_25_0.png" src="../_images/EdgeworthProduction_25_0.png" />
-</div>
-</div>
-<p>This relationship can be seen from the formula.  If agriculture were more labor intensive than manufacturing, so <span class="math notranslate nohighlight">\(\alpha &lt; \beta\)</span>, then an increase in the relative price of agricultural goods creates an incipient excess demand for labor and an excess supply of capital (as firms try to expand production in the now more profitable labor-intensive agricultural sector and cut back production in the now relatively less profitable and capital-intensive manufacturing sector). Equilibrium will only be restored if the equilibrium wage-rental ratio falls which in turn leads firms in both sectors to adopt more capital-intensive techniques.  With more capital per worker in each sector output per worker and hence real wages per worker <span class="math notranslate nohighlight">\(\frac{w}{P_a}\)</span> and <span class="math notranslate nohighlight">\(\frac{w}{P_m}\)</span> increase.</p>
-</div>
-<div class="section" id="to-be-completed">
-<h3>To be completed<a class="headerlink" href="#to-be-completed" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Code to solve for unique HOS equilibrium as a function of world relative price <span class="math notranslate nohighlight">\(\frac{P_A}{P_M}\)</span></p></li>
-<li><p>Interactive plot with <span class="math notranslate nohighlight">\(\frac{P_A}{P_M}\)</span> slider that plots equilibrium in Edgeworth box and PPF</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="code-section">
-<h2>Code section<a class="headerlink" href="#code-section" title="Permalink to this headline">¶</a></h2>
-<p>To keep the presentation tidy I’ve put the code that is used in the notebook above at the end of the notebook.
-Run all code below this cell first.  Then return and run all code above.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ALPHA</span> <span class="o">=</span> <span class="mf">0.6</span>   <span class="c1"># capital share in agriculture</span>
-<span class="n">BETA</span> <span class="o">=</span> <span class="mf">0.4</span>   <span class="c1"># </span>
-
-<span class="n">KBAR</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">LBAR</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># =Pa/Pm  relative price of ag goods</span>
-
-<span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Agriculture Production function&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">K</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">G</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Manufacturing Production function&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">K</span><span class="o">**</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">budgetc</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">I</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">I</span><span class="o">/</span><span class="n">p2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">p1</span><span class="o">/</span><span class="n">p2</span><span class="p">)</span><span class="o">*</span><span class="n">c1</span>
-
-<span class="k">def</span> <span class="nf">isoq</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">mu</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">mu</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">edgeworth</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">Kbar</span><span class="o">=</span><span class="n">KBAR</span><span class="p">,</span> <span class="n">Lbar</span><span class="o">=</span><span class="n">LBAR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;efficiency locus: &quot;&quot;&quot;</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="n">alpha</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">beta</span>
-    <span class="k">return</span> <span class="n">b</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">Kbar</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">Lbar</span><span class="o">-</span><span class="n">L</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">edgeplot</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">Kbar</span><span class="o">=</span><span class="n">KBAR</span><span class="p">,</span> <span class="n">Lbar</span><span class="o">=</span><span class="n">LBAR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Draw an edgeworth box</span>
-<span class="sd">    </span>
-<span class="sd">    arguments:</span>
-<span class="sd">    LA -- labor allocated to ag, from which calculate QA(Ka(La),La) </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">KA</span> <span class="o">=</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    <span class="n">RTS</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">KA</span><span class="o">/</span><span class="n">LA</span><span class="p">)</span>
-    <span class="n">QA</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">KA</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">QM</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">Kbar</span><span class="o">-</span><span class="n">KA</span><span class="p">,</span><span class="n">Lbar</span><span class="o">-</span><span class="n">LA</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(LA,KA)=(</span><span class="si">{:4.1f}</span><span class="s2">, </span><span class="si">{:4.1f}</span><span class="s2">)  (QA, QM)=(</span><span class="si">{:4.1f}</span><span class="s2">, </span><span class="si">{:4.1f}</span><span class="s2">)  RTS=</span><span class="si">{:4.1f}</span><span class="s2">&quot;</span>
-          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span><span class="n">KA</span><span class="p">,</span><span class="n">QA</span><span class="p">,</span><span class="n">QM</span><span class="p">,</span><span class="n">RTS</span><span class="p">))</span>
-    <span class="n">La</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Lbar</span><span class="p">)</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">La</span><span class="p">,</span><span class="n">Kbar</span><span class="p">,</span><span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span><span class="s1">&#39;k-&#39;</span><span class="p">)</span>
-    <span class="c1">#ax.plot(La, La,&#39;k--&#39;)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">isoq</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">QA</span><span class="p">,</span> <span class="n">alpha</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">Kbar</span><span class="o">-</span><span class="n">isoq</span><span class="p">(</span><span class="n">Lbar</span><span class="o">-</span><span class="n">La</span><span class="p">,</span> <span class="n">QM</span><span class="p">,</span> <span class="n">beta</span><span class="p">),</span><span class="s1">&#39;g-&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">KA</span><span class="p">,</span><span class="s1">&#39;ob&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">KA</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">KA</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$O_A$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">Lbar</span><span class="p">,</span><span class="n">Kbar</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$O_M$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$L_A -- Labor$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$K_A - Capital$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="c1">#plt.show()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ppf</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span><span class="n">Kbar</span><span class="o">=</span><span class="n">KBAR</span><span class="p">,</span> <span class="n">Lbar</span><span class="o">=</span><span class="n">LBAR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Draw a production possibility frontier</span>
-<span class="sd">    </span>
-<span class="sd">    arguments:</span>
-<span class="sd">    LA -- labor allocated to ag, from which calculate QA(Ka(La),La) </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">KA</span> <span class="o">=</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">LA</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    <span class="n">RTS</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">KA</span><span class="o">/</span><span class="n">LA</span><span class="p">)</span>
-    <span class="n">QA</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span> <span class="n">KA</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">QM</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">Kbar</span><span class="o">-</span><span class="n">KA</span><span class="p">,</span><span class="n">Lbar</span><span class="o">-</span><span class="n">LA</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">QA</span><span class="p">,</span><span class="n">QM</span><span class="p">)</span>
-    <span class="n">La</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Lbar</span><span class="p">)</span>
-    <span class="n">Ka</span> <span class="o">=</span> <span class="n">edgeworth</span><span class="p">(</span><span class="n">La</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    <span class="n">Qa</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">Ka</span><span class="p">,</span><span class="n">La</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">Qm</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">Kbar</span><span class="o">-</span><span class="n">Ka</span><span class="p">,</span><span class="n">Lbar</span><span class="o">-</span><span class="n">La</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Kbar</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Qa</span><span class="p">,</span> <span class="n">Qm</span><span class="p">,</span><span class="s1">&#39;k-&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Q_A$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Q_B$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>It’s interesting to note that for Cobb-Douglas technologies you really need quite a difference in capital-intensities between the two technologies in order to get much curvature to the production function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">ppf</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/EdgeworthProduction_35_0.png" src="../_images/EdgeworthProduction_35_0.png" />
-</div>
-</div>
-<div class="section" id="code-for-stolper-samuelson-line">
-<h3>Code for Stolper Samuelson line<a class="headerlink" href="#code-for-stolper-samuelson-line" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wreq</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
     <span class="n">B</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">b</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">))</span><span class="o">**</span><span class="n">a</span>  <span class="o">*</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="n">b</span>
@@ -598,7 +540,7 @@ Run all code below this cell first.  Then return and run all code above.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ssline</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -612,17 +554,32 @@ Run all code below this cell first.  Then return and run all code above.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssline</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssline</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/EdgeworthProduction_39_0.png" src="../_images/EdgeworthProduction_39_0.png" />
+<img alt="../_images/EdgeworthProduction_32_0.png" src="../_images/EdgeworthProduction_32_0.png" />
+</div>
+</div>
+<p>This relationship can be seen from the formula.  If agriculture were more labor intensive than manufacturing, so <span class="math notranslate nohighlight">\(\alpha &lt; \beta\)</span>, then an increase in the relative price of agricultural goods creates an incipient excess demand for labor and an excess supply of capital (as firms try to expand production in the now more profitable labor-intensive agricultural sector and cut back production in the now relatively less profitable and capital-intensive manufacturing sector). Equilibrium will only be restored if the equilibrium wage-rental ratio falls which in turn leads firms in both sectors to adopt more capital-intensive techniques.  With more capital per worker in each sector output per worker and hence real wages per worker <span class="math notranslate nohighlight">\(\frac{w}{P_a}\)</span> and <span class="math notranslate nohighlight">\(\frac{w}{P_m}\)</span> increase.</p>
+</div>
+<div class="section" id="to-be-completed">
+<h3>To be completed<a class="headerlink" href="#to-be-completed" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Code to solve for unique HOS equilibrium as a function of world relative price <span class="math notranslate nohighlight">\(\frac{P_A}{P_M}\)</span></p></li>
+<li><p>Interactive plot with <span class="math notranslate nohighlight">\(\frac{P_A}{P_M}\)</span> slider that plots equilibrium in Edgeworth box and PPF</p></li>
+</ul>
+<p>It’s interesting to note that for Cobb-Douglas technologies you really need quite a difference in capital-intensities between the two technologies in order to get much curvature to the production function.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"7cb40b76392d4014a59783af79f5500d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3d1880976a454bc7bf0b001e8cda9a94": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_dafb21ddf57b44f29f0723f5f6f86de8", "IPY_MODEL_ed3913893ba14b6d8d377a11582c4860", "IPY_MODEL_a502418dd8954f6a92341ac960de4474", "IPY_MODEL_ff1e23b864e04909b6a71ef7731026c4"], "layout": "IPY_MODEL_7cb40b76392d4014a59783af79f5500d"}}, "2090e55d82d747c3ab4504f28eb9c883": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5e6fc016a06a45ec9958373020850447": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "dafb21ddf57b44f29f0723f5f6f86de8": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "LA", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_2090e55d82d747c3ab4504f28eb9c883", "max": 90, "min": 10, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_5e6fc016a06a45ec9958373020850447", "value": 50}}, "e9cd361dc8ea4ad7b1f23d03fb1ae964": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "22f84329366c4c62b014f93153db96db": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "ed3913893ba14b6d8d377a11582c4860": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "alpha", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_e9cd361dc8ea4ad7b1f23d03fb1ae964", "max": 0.9, "min": 0.1, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_22f84329366c4c62b014f93153db96db", "value": 0.6}}, "86012adbc6e64098ba9b4a61fdd2a97e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2c5b228c64f14c34b9c562a822b4d8b6": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "a502418dd8954f6a92341ac960de4474": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "beta", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_86012adbc6e64098ba9b4a61fdd2a97e", "max": 0.9, "min": 0.1, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_2c5b228c64f14c34b9c562a822b4d8b6", "value": 0.4}}, "093c709a96174ce1aa038b1ea062f232": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ff1e23b864e04909b6a71ef7731026c4": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_093c709a96174ce1aa038b1ea062f232", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "(LA,KA)=(50.0, 69.2)  (QA, QM)=(60.8, 41.2)  RTS= 2.1\n"}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
     <script type="text/x-thebe-config">
     {
