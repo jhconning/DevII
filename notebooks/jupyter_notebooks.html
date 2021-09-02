@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Economics with Jupyter &#8212; DevII</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Edgeworth Box: Efficiency in production allocation" href="EdgeworthProduction.html" />
+    <link rel="prev" title="Neo-classical models" href="neokmodels.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DevII</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   DevII
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Models
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="neokmodels.html">
+   Neo-classical models
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Economics with Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EdgeworthProduction.html">
+     Edgeworth Box: Efficiency in production allocation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lucas90.html">
+     Lucas (1990) “Why Doesn’t Capital Flow from Rich to Poor Countries?”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Vollrath.html">
+     Volrath (2009) “How important are dual economy effects…”
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Land and Property
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="FarmHousehold.html">
+   Farm Household Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Coase.html">
+   Coase and Property
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/jupyter_notebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhconning/commitments"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jhconning/commitments/main?urlpath=tree/notebooks/jupyter_notebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/jhconning/commitments/blob/main/notebooks/jupyter_notebooks.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ways-to-view-and-run-jupyter-notebooks">
+   Ways to view and run jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-simple-jupyter-notebook-example">
+   A simple jupyter notebook example:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#are-average-incomes-per-capita-converging">
+     Are average incomes per capita converging?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#neoclassical-growth-theory">
+       Neoclassical growth theory:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convergence-plots">
+       Convergence plots
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interactive-plots">
+       Interactive plots
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-jupyter-notebooks-and-scientific-python">
+   More on jupyter notebooks and scientific python
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="economics-with-jupyter">
+<h1>Economics with <a class="reference external" href="http://jupyter.org/">Jupyter</a><a class="headerlink" href="#economics-with-jupyter" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>A Jupyter Notebook is an “application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.”</p></li>
+</ul>
+<ul class="simple">
+<li><p>It evolved from  <a class="reference external" href="http://ipython.org/notebook.html">ipython notebooks</a> to leverage huge scientific python ecosystem.</p></li>
+<li><p>It is now a ‘language agnostic’ platform so that you can use jupyter notebooks as a front-end for any of 50+ other kernels including pyton, R,  MATLAB, Octave, <a class="reference external" href="https://github.com/cpbl/pystata">Stata</a>, Julia, etc.</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Open-source, fast evolving, large community:</strong> Widely used in academic and scientific computing community.</p></li>
+<li><p><strong>Ties projects together:</strong> Code, data, documentation, output and analysis all in one place.  The course site for Econ 842 Dev II is built as a <a class="reference external" href="https://jupyterbook.org/">jupyterbook</a> from jupyter notebooks and markdown files.</p></li>
+<li><p><strong>Encourages reproducible science:</strong></p>
+<ul>
+<li><p>Easy workflow from exploratory analysis to publish.</p></li>
+<li><p>Works well with github and other open-source sharing tools.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="ways-to-view-and-run-jupyter-notebooks">
+<h2>Ways to view and run jupyter notebooks<a class="headerlink" href="#ways-to-view-and-run-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p><strong>Jupyter server for interactive computing</strong> Run on a local machine or cloud server to modify code and results on the fly.</p>
+<ul class="simple">
+<li><p>On your computer:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.continuum.io/downloads">Jupyter notebook on your local machine</a>.  I recommend using <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a> to install Jupyter and scientific python.  A good instalation guide <a class="reference external" href="https://lectures.quantecon.org/py/getting_started.html">here</a></p></li>
+<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/">Jupyter Lab</a>. A browser based integrated development environment for jupyter notebooks.
+jupyter notebooks.</p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Google Colab</a>: Run notebooks stored on your google drive.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Static rendering for presentations and publishing.</strong></p>
+<ul class="simple">
+<li><p>Jupyter notebooks can be rendered in different ways for example as a styled HTML slideshow or page or as a PDF book by using tools and services such as github, nbconvert, <a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a> and <a class="reference external" href="https://readthedocs.org/">Read the Docs</a>.</p></li>
+<li><p><strong>This very notebook</strong> is:</p>
+<ul>
+<li><p>hosted on <a class="reference external" href="https://github.com/jhconning/Dev-II/blob/master/notebooks/jupyter_notebooks.ipynb">the Dev-II repository on github</a> where it is <a class="reference external" href="https://github.com/jhconning/Dev-II/blob/master/notebooks/jupyter_notebooks.ipynb">rendered</a> in simple HTML (though underlying format is json).</p></li>
+<li><p>viewable in HTML or as javascript slideshow <a class="reference external" href="http://nbviewer.jupyter.org/github/jhconning/Dev-II/blob/master/notebooks/jupyter_notebooks.ipynb">via nbviewer</a>. To then see in slideshow mode click on ‘present’ icon on top right.</p></li>
+<li><p>Tied together with other documents via Sphinx to create a <a class="reference external" href="http://dev-ii-seminar.readthedocs.org/">website on readthedocs</a></p></li>
+<li><p>Also viewable as a <a class="reference external" href="https://media.readthedocs.org/pdf/dev-ii-seminar/latest/dev-ii-seminar.pdf">PDF book on readthedocs</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="a-simple-jupyter-notebook-example">
+<h2>A simple jupyter notebook example:<a class="headerlink" href="#a-simple-jupyter-notebook-example" title="Permalink to this headline">¶</a></h2>
+<p>We can combine text, math, code and graph outputs in one place.  Let’s study a simple economics question:</p>
+<div class="section" id="are-average-incomes-per-capita-converging">
+<h3>Are average incomes per capita converging?<a class="headerlink" href="#are-average-incomes-per-capita-converging" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="neoclassical-growth-theory">
+<h4>Neoclassical growth theory:<a class="headerlink" href="#neoclassical-growth-theory" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Solow-growth model with Cobb-Douglas technology <span class="math notranslate nohighlight">\(f(k)=k^\alpha\)</span>.</p></li>
+<li><p>Technology, saving rate <span class="math notranslate nohighlight">\(s\)</span>, capital depreciation rate <span class="math notranslate nohighlight">\(\delta\)</span>, population growth rate <span class="math notranslate nohighlight">\(n\)</span> and technological change rate <span class="math notranslate nohighlight">\(g\)</span> assumed same across countries.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Steady-state capital per worker to which countries are converging:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+k^{*} = (g/s)^\frac{1}{\alpha-1}
+\]</div>
+<ul class="simple">
+<li><p>Transitional dynamics:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\dot{k}(t) = s k(t)^{t} -(n+g+\delta)k(t)
+\]</div>
+<ul class="simple">
+<li><p>Diminishing returns to the accumulated factor <span class="math notranslate nohighlight">\(k\)</span> implies convergence:</p>
+<ul>
+<li><p>Lower initial capital stock implies lower initial per-capita GDP.</p></li>
+<li><p>Country that starts with lower capital stock and GDP per capita ‘catches up’ by growing faster.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="convergence-plots">
+<h4>Convergence plots<a class="headerlink" href="#convergence-plots" title="Permalink to this headline">¶</a></h4>
+<p><strong>Did countries with low levels of income per capita in 1960 grow faster?</strong></p>
+<p>I found a dataset from World Penn Tables <a class="reference external" href="http://www.reed.edu/economics/course_pages/304_f07/asgns/HW7_empirical.pdf">on this website</a> (original data source <a class="reference external" href="http://www.rug.nl/ggdc/docs/pwt90.dta">here</a>).</p>
+<p>Let us import useful python libraries for data handling and plots and load the dataset into a pandas dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s2">&quot;.\data\country.dta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1732</span><span class="o">/</span><span class="mf">2936477479.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>(in the future we will follow best practice and place library imports at the top of our notebooks).</p>
+<p><strong>Scatterplot of log GDP per capita and average growth 1960-2000:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;lgdp60&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;ggdp&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;reg&quot;</span><span class="p">,</span>
+                  <span class="n">color</span> <span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/jupyter_notebooks_16_0.png" src="../_images/jupyter_notebooks_16_0.png" />
+</div>
+</div>
+<p><strong>Same plot but excluding African countries:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">cont</span> <span class="o">!=</span><span class="s2">&quot;Africa&quot;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;lgdp60&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;ggdp&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;reg&quot;</span><span class="p">,</span> 
+                  <span class="n">color</span> <span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/jupyter_notebooks_18_0.png" src="../_images/jupyter_notebooks_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="interactive-plots">
+<h4>Interactive plots<a class="headerlink" href="#interactive-plots" title="Permalink to this headline">¶</a></h4>
+<p>There are ways to make plots like these interactive.</p>
+<ul class="simple">
+<li><p>On the next slide I use <a class="reference external" href="https://github.com/ipython/ipywidgets">ipywidgets</a>:  When the notebook is run on a jupyter server ‘radio buttons’ above the plot allow quick re-plotting for selected country regions.</p></li>
+<li><p>Other libraries such as <a class="reference external" href="http://bokeh.pydata.org/">Bokeh</a> and <a class="reference external" href="https://plot.ly/">Plotly</a> create plots with embedded javascript code that allow interactive plot elements even on HTML renderings (i.e. in most browsers even if you do not have a jupyter server running).</p></li>
+</ul>
+<p>Here is how do do a <strong>dropdown menu</strong>.  First we write a function to take a ‘region’ as argument that plots data only for that region (by specifying that filter in the pandas dataframe). We then use interact from the ipywidgets library to switch quickly between regions.</p>
+<p>You’ll only see this as truly interactive on a live notebook, not in a static HTML rendering of the same notebook (e.g. click on rocket button icon on top right and choose Binder or Google Colab).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">jplot</span><span class="p">(</span><span class="n">region</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">cont</span> <span class="o">==</span><span class="n">region</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;lgdp60&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;ggdp&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;reg&quot;</span><span class="p">,</span> 
+                  <span class="n">color</span> <span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">jplot</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">cont</span><span class="o">.</span><span class="n">unique</span><span class="p">()));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "00015338764842d5bb87f3398f99572b", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-on-jupyter-notebooks-and-scientific-python">
+<h2>More on jupyter notebooks and scientific python<a class="headerlink" href="#more-on-jupyter-notebooks-and-scientific-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>An excellent introduction to Jupyter notebooks and scientific python for economists written by John Stachurski is at this link:</p></li>
+</ul>
+<p><a class="reference external" href="http://quant-econ.net/py/learning_python.html">http://quant-econ.net/py/learning_python.html</a></p>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"00015338764842d5bb87f3398f99572b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_90e8eaa835994fe5a3cdb63b6c941548", "IPY_MODEL_94ad2aafe8b84855ac527b0abf750f7e"], "layout": "IPY_MODEL_ada482162b3749e48b71ebe56507cb01"}}, "1ebd8b41e43e46a7925ee6656b878984": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "21c72b345e2f43fd8a9cf8ef659ba499": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "90e8eaa835994fe5a3cdb63b6c941548": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DropdownModel", "state": {"_options_labels": ["Africa", "Asia", "Europe & N. America", "S. America"], "description": "region", "index": 0, "layout": "IPY_MODEL_1ebd8b41e43e46a7925ee6656b878984", "style": "IPY_MODEL_21c72b345e2f43fd8a9cf8ef659ba499"}}, "94ad2aafe8b84855ac527b0abf750f7e": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"layout": "IPY_MODEL_f3fd655517634921b095008d65198f17", "outputs": [{"data": {"image/png": "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\n", "text/plain": "<Figure size 504x504 with 3 Axes>"}, "metadata": {"needs_background": "light"}, "output_type": "display_data"}]}}, "ada482162b3749e48b71ebe56507cb01": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "f3fd655517634921b095008d65198f17": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="neokmodels.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Neo-classical models</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="EdgeworthProduction.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Edgeworth Box: Efficiency in production allocation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jonathan Conning<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
