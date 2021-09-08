@@ -6,16 +6,13 @@ parts:
   chapters:
    - file: notebooks/neokmodels
      sections:
-     - file: notebooks/jupyter_notebooks
-     - file: notebooks/EdgeworthProduction
-     - file: notebooks/SFM
      - file: notebooks/Lucas90
      - file: notebooks/Vollrath
+     - file: notebooks/EdgeworthProduction
+     - file: notebooks/SFM
+     - file: notebooks/StructuralT1
      - file: notebooks/HarrisTodaro
-
-- caption: Land and Property
-  chapters:
-   - file: notebooks/FarmHousehold
-   - file: notebooks/Coase
+     - file: notebooks/FarmHousehold
+  # - file: notebooks/Coase
 
 
