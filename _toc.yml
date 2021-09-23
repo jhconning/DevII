@@ -16,6 +16,9 @@ parts:
 - caption: Land and Property
   chapters:
    - file: notebooks/FarmHousehold
+   - file: notebooks/RDD_R.ipynb
+   - url: https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing
+     title: RDD and Dell (08) Mita
    - file: notebooks/Coase
 
 
