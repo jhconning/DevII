@@ -375,7 +375,7 @@ D_i= \left\{
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(X_0\)</span> is a threshold or cutoff.</p>
 <p><strong>Example:</strong> National Merit scholarship awarded to all students with PSAT score above some threshold.</p>
-<p><img alt="sharpRD" src="notebooks/media/sharpRD.PNG" /></p>
+<p><img alt="sharpRD" src="../_images/sharpRD.PNG" /></p>
 <p><span class="math notranslate nohighlight">\(Y_i(1)\)</span> and <span class="math notranslate nohighlight">\(Y_i(0)\)</span> are potential outcomes observed under treatment or control, respectively. <span class="math notranslate nohighlight">\(E[Y_i(1)|X_i]\)</span> observed only to right of cutoff. <span class="math notranslate nohighlight">\(E[Y_i(0)|X_i]\)</span> only to left.</p>
 <p>Treatment effect estimated as</p>
 <div class="math notranslate nohighlight">
@@ -383,15 +383,15 @@ D_i= \left\{
 \tau_{SRD}=E[Y_i(1)-Y_i(0)|X_i=X_0]
 \]</div>
 <p>Local treatment effect at/near the cutoff.  In practice SRD estimate estimated as difference between weighted average of outcomes on the either side of the discontinuity.</p>
-<p><img alt="sharpRD2" src="notebooks/media/sharpRD2.PNG" /></p>
+<p><img alt="sharpRD2" src="../_images/sharpRD2.PNG" /></p>
 <p>Conditional independence:</p>
 <div class="math notranslate nohighlight">
 \[E[Y_i(0) |X_i , D_i ] = E[Y_i(0) |X_i ]\]</div>
 <p>once we control for cofounder <span class="math notranslate nohighlight">\(X_i\)</span>, treatment assignment as good as random.</p>
 <p>For observations very close to the discontinuity we effectively have an experiment.</p>
-<p><img alt="rdd1" src="notebooks/media/rdd1.PNG" /></p>
+<p><img alt="rdd1" src="../_images/rdd1.PNG" /></p>
 <p>Non-linearity must not be mistaken for a discontinuity.  In this example with linear fits on each side, estimate a positive ‘treatment’ effect. More likely relationship is non-linear with zero treatment effect.</p>
-<p><img alt="Non Linear relationship" src="notebooks/media/rd_nonlin.png" /></p>
+<p><img alt="Non Linear relationship" src="../_images/rd_nonlin.png" /></p>
 </div>
 <div class="section" id="example-from-meyersson-2014">
 <h2>Example from Meyersson (2014)<a class="headerlink" href="#example-from-meyersson-2014" title="Permalink to this headline">¶</a></h2>
@@ -543,7 +543,7 @@ Y_i = f(X_i) +\beta D_i + \epsilon_i
 From <a class="reference external" href="http://nrs.harvard.edu/urn-3:HUL.InstRepos:9368030">Zamosc 2012</a></p>
 <div class="section" id="polynomial-fit-in-2-dimensions">
 <h3>Polynomial Fit in 2 dimensions<a class="headerlink" href="#polynomial-fit-in-2-dimensions" title="Permalink to this headline">¶</a></h3>
-<p><img alt="2d polyfit" src="notebooks/media/RDD_2force2.PNG" /></p>
+<p><img alt="2d polyfit" src="../_images/RDD_2force2.PNG" /></p>
 <p>With two forcing variables</p>
 <ul class="simple">
 <li><p>The cutoff is now a boundary</p></li>
@@ -558,7 +558,7 @@ From <a class="reference external" href="http://nrs.harvard.edu/urn-3:HUL.InstRe
 <ul class="simple">
 <li><p>Latitude, Longitude forcing variables. Collapse to one-dimensional distance (e.g. ‘distance to border’) problematic.</p></li>
 </ul>
-<p><img alt="" src="notebooks/media/2d_distance.PNG" />
+<p><img alt="" src="../_images/2d_distance.PNG" />
 Keele &amp; Titiunik (2014)</p>
 </div>
 <div class="section" id="a-spatial-rdd-application">
