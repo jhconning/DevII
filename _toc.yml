@@ -12,20 +12,13 @@ parts:
      - file: notebooks/SFM
      - file: notebooks/StructuralT1
      - file: notebooks/HarrisTodaro
-     - file: notebooks/FarmHousehold
-  # - file: notebooks/Coase
 
-<<<<<<< HEAD
-  
-=======
-- caption: Land and Property
+- caption: Institutions and Organization
   chapters:
+   - file: notebooks/Coase
    - file: notebooks/FarmHousehold
    - file: notebooks/RDD_R.ipynb
    - url: https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing
      title: RDD and Dell (08) Mita
    - url: https://drive.google.com/file/d/1BYHau4GKCOaop1AMfLJdsZp0-fUIN7RA/view?usp=sharing
      title: slides 9/23
-
-
->>>>>>> 577df5d5990e3c459cb97245e2bdb7f459840a39
