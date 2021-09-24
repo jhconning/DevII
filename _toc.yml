@@ -2,7 +2,7 @@ format: jb-book
 root: README
 
 parts:
-- caption: Models
+- caption: Topics
   chapters:
    - file: notebooks/neokmodels
      sections:
@@ -13,12 +13,12 @@ parts:
      - file: notebooks/StructuralT1
      - file: notebooks/HarrisTodaro
 
-- caption: Institutions/Organization
-  chapters:
-   - file: notebooks/Coase
-   - file: notebooks/FarmHousehold
-   - file: notebooks/RDD_R.ipynb
-
+   - file: notebooks/prodn_org
+     sections:
+     - file: notebooks/Coase
+     - file: notebooks/FarmHousehold
+     - file: notebooks/RDD_R.ipynb
+       title: RD designs (in R)
 
 - caption: slides
   chapters:

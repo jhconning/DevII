@@ -3,7 +3,7 @@
 
 title: DevII
 author: Jonathan Conning
-#logo: logo.png
+logo: logo.png
 
 execute:
   execute_notebooks: 'off'
@@ -11,13 +11,15 @@ execute:
 
 # Define the name of the latex output file for PDF builds
 latex:
+  latex_engine              : pdflatex  
+  use_jupyterbook_latex     : true
   latex_documents:
     targetname: book.tex
 
 launch_buttons:
-  binderhub_url: "https://mybinder.org"   
+  binderhub_url: https://mybinder.org
   colab_url: "https://colab.research.google.com"
-  thebe: false
+  thebe: true
 
 # Information about where the book exists on the web
 repository:
@@ -25,7 +27,10 @@ repository:
   branch: main  # Which branch of the repository should be used when creating links (optional)
   
 parse:
-  myst_extended_syntax      : true 
+  myst_enable_extensions:
+    - colon_fence
+    - linkify
+    - html_image 
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
