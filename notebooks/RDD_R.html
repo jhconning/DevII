@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Discontinuity Designs (in R) &#8212; DevII</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Farm Household Models" href="FarmHousehold.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DevII</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   DevII
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="neokmodels.html">
+   Neo-classical models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lucas90.html">
+     Lucas (1990) “Why Doesn’t Capital Flow from Rich to Poor Countries?”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Vollrath.html">
+     Volrath (2009) “How important are dual economy effects…”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EdgeworthProduction.html">
+     Edgeworth Box: Efficiency in production allocation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SFM.html">
+     The Specific Factors Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="StructuralT1.html">
+     Models of Structural Transformation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HarrisTodaro.html">
+     The Harris-Todaro Model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Institutions and Organization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Coase.html">
+   Coase and Property
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="FarmHousehold.html">
+   Farm Household Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Research Discontinuity Designs (in R)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing">
+   RDD and Dell (08) Mita
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/1BYHau4GKCOaop1AMfLJdsZp0-fUIN7RA/view?usp=sharing">
+   slides 9/23
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/RDD_R.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhconning/commitments"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jhconning/commitments/main?urlpath=tree/notebooks/RDD_R.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/jhconning/commitments/blob/main/notebooks/RDD_R.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sharp-rd">
+   Sharp RD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-from-meyersson-2014">
+   Example from Meyersson (2014)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-code">
+   R Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-comparison-of-means-narrowing-the-bandwidth">
+     Local comparison of means: Narrowing the bandwidth
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rd-plots">
+   RD plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fuzzy-rd">
+   Fuzzy RD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-score-rd-design">
+   Multi-Score RD design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomial-fit-in-2-dimensions">
+     Polynomial Fit in 2 dimensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geographic-rd-designs">
+   Geographic RD designs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-spatial-rdd-application">
+   A spatial RDD Application:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dell-2010-persistent-effects-of-peru-s-mining-mita">
+     Dell (2010) Persistent Effects of Peru’s Mining
+     <em>
+      Mita
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="research-discontinuity-designs-in-r">
+<h1>Research Discontinuity Designs (in R)<a class="headerlink" href="#research-discontinuity-designs-in-r" title="Permalink to this headline">¶</a></h1>
+<p>This is a jupyter notebook that can be executed with an <a class="reference external" href="https://irkernel.github.io/">R kernel</a> running in the background to execute R code.</p>
+<p>The content below draws heavily upon these two excellent souces:</p>
+<ul class="simple">
+<li><p>Cattaneo, Idrobo and Titiunik (2008) “A Practical Introduction to Regression Discontinuity Designs: Part I,” in Cambridge Elements: Quantitative and Computational Methods for Social Science, Cambridge University Press. See also “Part II” paper.</p></li>
+<li><p>Meyersson (2014): <a class="reference external" href="https://doi.org/10.3982/ecta9878">Islamic Rule and the Empowerment of the Poor and Pious</a>, <em>Econometrica</em> 82(1): 229-269.</p></li>
+</ul>
+<p>Links to these papers and data and both Stata and R code for replication at <a class="reference external" href="https://sites.google.com/site/rdpackages/">RD Software Packages site</a>.</p>
+<div class="section" id="sharp-rd">
+<h2>Sharp RD<a class="headerlink" href="#sharp-rd" title="Permalink to this headline">¶</a></h2>
+<p>Assignment to treatment status is a deterministic and discontinuous function of a covariate (running variable or forcing variable) <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D_i= \left\{
+\begin{array}{&#64;{}ll&#64;{}}
+    1 &amp; \text{if}\ X_i\ge X_0 \\
+    0 &amp; \text{if}\ X_i \lt X_0 
+ \end{array}
+ \right.
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_0\)</span> is a threshold or cutoff.</p>
+<p><strong>Example:</strong> National Merit scholarship awarded to all students with PSAT score above some threshold.</p>
+<p><img alt="sharpRD" src="notebooks/media/sharpRD.PNG" /></p>
+<p><span class="math notranslate nohighlight">\(Y_i(1)\)</span> and <span class="math notranslate nohighlight">\(Y_i(0)\)</span> are potential outcomes observed under treatment or control, respectively. <span class="math notranslate nohighlight">\(E[Y_i(1)|X_i]\)</span> observed only to right of cutoff. <span class="math notranslate nohighlight">\(E[Y_i(0)|X_i]\)</span> only to left.</p>
+<p>Treatment effect estimated as</p>
+<div class="math notranslate nohighlight">
+\[
+\tau_{SRD}=E[Y_i(1)-Y_i(0)|X_i=X_0]
+\]</div>
+<p>Local treatment effect at/near the cutoff.  In practice SRD estimate estimated as difference between weighted average of outcomes on the either side of the discontinuity.</p>
+<p><img alt="sharpRD2" src="notebooks/media/sharpRD2.PNG" /></p>
+<p>Conditional independence:</p>
+<div class="math notranslate nohighlight">
+\[E[Y_i(0) |X_i , D_i ] = E[Y_i(0) |X_i ]\]</div>
+<p>once we control for cofounder <span class="math notranslate nohighlight">\(X_i\)</span>, treatment assignment as good as random.</p>
+<p>For observations very close to the discontinuity we effectively have an experiment.</p>
+<p><img alt="rdd1" src="notebooks/media/rdd1.PNG" /></p>
+<p>Non-linearity must not be mistaken for a discontinuity.  In this example with linear fits on each side, estimate a positive ‘treatment’ effect. More likely relationship is non-linear with zero treatment effect.</p>
+<p><img alt="Non Linear relationship" src="notebooks/media/rd_nonlin.png" /></p>
+</div>
+<div class="section" id="example-from-meyersson-2014">
+<h2>Example from Meyersson (2014)<a class="headerlink" href="#example-from-meyersson-2014" title="Permalink to this headline">¶</a></h2>
+<p><strong>Identifying impacts of municipal election victories by Islamic political parties on educational attainment of women</strong></p>
+<p><span class="math notranslate nohighlight">\(X\)</span>   -  <em>running variable</em></p>
+<p><span class="math notranslate nohighlight">\(Y\)</span>   -  <em>outcome</em> women’s high-school completion rate</p>
+<p><span class="math notranslate nohighlight">\(T\)</span>   -  <em>treatment</em> Islamic party comes to power in municipal government</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#control the size of R plots in jupyter</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load R libraries</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">foreign</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lpdensity</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rddensity</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rdrobust</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rdlocrand</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">TeachingDemos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="r-code">
+<h2>R Code<a class="headerlink" href="#r-code" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;CIT_2018_Cambridge_polecon.dta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">Y</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">X</span>
+<span class="bp">T</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="bp">T</span>
+<span class="n">T_X</span> <span class="o">=</span> <span class="bp">T</span><span class="o">*</span><span class="n">X</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Raw Comparison of means</strong>  (Figure 2.3a)</p>
+<p>If we simply compare outcomes in treated (Islamic major) and non-treated areas (secular major), we find lower female educational attainment in areas where Islamic parties won.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
+       <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/RDD_R_16_0.png" src="../_images/RDD_R_16_0.png" />
+</div>
+</div>
+<div class="section" id="local-comparison-of-means-narrowing-the-bandwidth">
+<h3>Local comparison of means: Narrowing the bandwidth<a class="headerlink" href="#local-comparison-of-means-narrowing-the-bandwidth" title="Permalink to this headline">¶</a></h3>
+<p>In last plot we compared mean value in treated and control group.  But these two groups differ considerably.</p>
+<p>Below we focus on more ‘local’ effects (closer to just above and below the cutoff).</p>
+<p>In next plot we fit a 4th degree polynomial on each side but now limit bandwidth to ‘closer’ contests where absolute victory margin was within 50 points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">50</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">50</span><span class="p">],</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> 
+       <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>  <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> 
+       <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/RDD_R_18_0.png" src="../_images/RDD_R_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">],</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
+       <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/RDD_R_19_0.png" src="../_images/RDD_R_19_0.png" />
+</div>
+</div>
+<p><img alt="Meyersson " src="notebooks/media/Meyersson1.PNG" /></p>
+</div>
+</div>
+<div class="section" id="rd-plots">
+<h2>RD plots<a class="headerlink" href="#rd-plots" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>scatter plots (as above) make it hard to discern ‘jumps’</p></li>
+<li><p>RD plots aggregate or ‘smooth’ data before plotting.</p>
+<ul>
+<li><p>local sample means (from bins) represented by dots</p></li>
+<li><p>polynomial (or local linear) fits</p></li>
+</ul>
+</li>
+</ul>
+<p>Plenty of variation in bin and bandwidth selection and curve fitting based on these concepts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">20</span><span class="p">),</span> <span class="n">binselect</span> <span class="o">=</span> <span class="s">&#39;esmv&#39;</span><span class="p">,</span> <span class="n">x.label</span> <span class="o">=</span> <span class="s">&#39;Running Variable&#39;</span><span class="p">,</span> <span class="n">y.label</span> <span class="o">=</span> <span class="s">&#39;Outcome&#39;</span><span class="p">,</span> 
+       <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">25</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/RDD_R_22_0.png" src="../_images/RDD_R_22_0.png" />
+</div>
+</div>
+<p>The estimating equation:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i(0) = f(X_i) + \epsilon _i \]</div>
+<div class="math notranslate nohighlight">
+\[Y_i(1) = Y_i(0) + \beta\]</div>
+<p>All in one:
+$<span class="math notranslate nohighlight">\(
+Y_i = f(X_i) +\beta D_i + \epsilon_i
+\)</span>$</p>
+<p>The function <span class="math notranslate nohighlight">\(f(X_i)\)</span> (e.g. a polynomial) must be continuous at <span class="math notranslate nohighlight">\(X_0\)</span></p>
+<p>The RD estimate is difference between weighted average of outcomes on the either side of the discontinuity. Fitting a high order polynomial can mean these weighted averages are driven by observations far from the threshold.</p>
+<p>Parametric (polynomial on full data) or non-parametric (local regression closer to cutoff) approaches?</p>
+<p>Andrew Gelman’s <a class="reference external" href="http://andrewgelman.com/2013/08/05/evidence-on-the-impact-of-sustained-use-of-polynomial-regression-on-causal-inference-a-claim-that-coal-heating-is-reducing-lifespan-by-5-years-for-half-a-billion-people/">blog post from 8/13</a> discusses this issue.  See also <a class="reference external" href="https://blogs.worldbank.org/impactevaluations/curves-all-wrong-places-gelman-and-imbens-why-not-use-higher-order-polynomials-rd">Development Impact Blog</a></p>
+<p>Chen et al (2013) “Evidence on the impact of sustained exposure to air pollution on life expectancy from China’s Huai River policy,” <em>PNAS</em>.</p>
+<p><strong>Policy discontinuity</strong>:  North of China’s Huai river free coal for heating is distributed in winter. None ti the south. Using RDD method find total suspended particulates (TSPs) air pollution 55% higher just North of river compared to just south. Estimates China’s coal-burning was reducing lifespan by 5 years for half a billion people.</p>
+<p><img alt="" src="notebooks/media/ChinaRDD.png" /></p>
+<p>Are observations far from threshold affecting polynomial fit, driving results? Smaller estimates with linear fits?</p>
+<p><img alt="" src="notebooks/media/ChinaRDD2.PNG" /></p>
+</div>
+<div class="section" id="fuzzy-rd">
+<h2>Fuzzy RD<a class="headerlink" href="#fuzzy-rd" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../_images/fuzzy.PNG" /></p>
+<p>A fuzzy RD is like an RD with imperfect compliance or non-compliance.  Assignment to Treatment is as before summarized by indicator <span class="math notranslate nohighlight">\(I({X_i \ge X_0})\)</span> but compliance is now imperfect.  Like an Intent-to-Treat (ITT) estimator, the measured jump at the cutoff in the outcome needs to be rescaled.</p>
+<p>Structural equation:  <span class="math notranslate nohighlight">\(Y_i = f(X_i)+\beta D_i +\epsilon_i\)</span></p>
+<p>2nd stage reduced form: <span class="math notranslate nohighlight">\(Y_i = f(X_i)+\pi_2 I({X_i \ge X_0} +\xi_{2i}\)</span></p>
+<p>First stage: <span class="math notranslate nohighlight">\(D_i = g(X_i)+\pi_1 I({X_i \ge X_0} +\xi_{1i}\)</span></p>
+<p>Standard IV: <span class="math notranslate nohighlight">\( \beta=\frac{\pi_2}{\pi_1} \)</span></p>
+</div>
+<div class="section" id="multi-score-rd-design">
+<h2>Multi-Score RD design<a class="headerlink" href="#multi-score-rd-design" title="Permalink to this headline">¶</a></h2>
+<p>Example: Third graders have to go to summer school if score below <span class="math notranslate nohighlight">\(X_{10}\)</span> in reading test OR below <span class="math notranslate nohighlight">\(X_{20}\)</span> in math test. Does summer school raise test performance next year?</p>
+<p><img alt="" src="../_images/RDD_2force.PNG" />
+From <a class="reference external" href="http://nrs.harvard.edu/urn-3:HUL.InstRepos:9368030">Zamosc 2012</a></p>
+<div class="section" id="polynomial-fit-in-2-dimensions">
+<h3>Polynomial Fit in 2 dimensions<a class="headerlink" href="#polynomial-fit-in-2-dimensions" title="Permalink to this headline">¶</a></h3>
+<p><img alt="2d polyfit" src="notebooks/media/RDD_2force2.PNG" /></p>
+<p>With two forcing variables</p>
+<ul class="simple">
+<li><p>The cutoff is now a boundary</p></li>
+<li><p>Heterogenous effects, depending on what segment of the boundary</p></li>
+<li><p>with right assumptions (lots of data), can identify one treatment effect for every point b on boundary. Treatment effect curve <span class="math notranslate nohighlight">\(\tau(b)\)</span></p></li>
+<li><p>Average Treatment Effect (ATE) would average over boundary</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="geographic-rd-designs">
+<h2>Geographic RD designs<a class="headerlink" href="#geographic-rd-designs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Latitude, Longitude forcing variables. Collapse to one-dimensional distance (e.g. ‘distance to border’) problematic.</p></li>
+</ul>
+<p><img alt="" src="notebooks/media/2d_distance.PNG" />
+Keele &amp; Titiunik (2014)</p>
+</div>
+<div class="section" id="a-spatial-rdd-application">
+<h2>A spatial RDD Application:<a class="headerlink" href="#a-spatial-rdd-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dell-2010-persistent-effects-of-peru-s-mining-mita">
+<h3>Dell (2010) Persistent Effects of Peru’s Mining <em>Mita</em><a class="headerlink" href="#dell-2010-persistent-effects-of-peru-s-mining-mita" title="Permalink to this headline">¶</a></h3>
+<p>Dell, Melissa. 2010. “The Persistent Effects of Peru’s Mining ‘Mita.’” <em>Econometrica</em> 78 (6): 1863–1903.</p>
+<p>Continue to slide notes.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="FarmHousehold.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Farm Household Models</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Jonathan Conning<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

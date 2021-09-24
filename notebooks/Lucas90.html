@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Volrath (2009) “How important are dual economy effects…”" href="Vollrath.html" />
-    <link rel="prev" title="Edgeworth Box: Efficiency in production allocation" href="EdgeworthProduction.html" />
+    <link rel="prev" title="Neo-classical models" href="neokmodels.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -108,16 +108,6 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="jupyter_notebooks.html">
-     Economics with Jupyter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="EdgeworthProduction.html">
-     Edgeworth Box: Efficiency in production allocation
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Lucas (1990) “Why Doesn’t Capital Flow from Rich to Poor Countries?”
@@ -128,23 +118,58 @@
      Volrath (2009) “How important are dual economy effects…”
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EdgeworthProduction.html">
+     Edgeworth Box: Efficiency in production allocation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SFM.html">
+     The Specific Factors Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="StructuralT1.html">
+     Models of Structural Transformation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HarrisTodaro.html">
+     The Harris-Todaro Model
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Land and Property
+  Institutions and Organization
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Coase.html">
+   Coase and Property
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="FarmHousehold.html">
    Farm Household Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Coase.html">
-   Coase and Property
+  <a class="reference internal" href="RDD_R.html">
+   Research Discontinuity Designs (in R)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing">
+   RDD and Dell (08) Mita
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/1BYHau4GKCOaop1AMfLJdsZp0-fUIN7RA/view?usp=sharing">
+   slides 9/23
   </a>
  </li>
 </ul>
@@ -347,39 +372,24 @@
 <p>Assume two countries with same aggregate production function, where <span class="math notranslate nohighlight">\(X\)</span> is capital stock and <span class="math notranslate nohighlight">\(L\)</span> is labor force:</p>
 <div class="math notranslate nohighlight">
 \[Y = A X^\beta L^{1-\beta}\]</div>
-<p><strong>in intensive or per-capita form</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
-y = A x^\beta
-\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight">
-\[
-y = \frac{Y}{L} \text{    and    } x = \frac{X}{L}
-\]</div>
+<p><strong>in intensive or per-capita form</strong>:
+$<span class="math notranslate nohighlight">\(y = A x^\beta\)</span>$</p>
+<p>where
+$<span class="math notranslate nohighlight">\(y = \frac{Y}{L} \text{    and    } x = \frac{X}{L}\)</span>$</p>
 <p><strong>Marginal Product of Capital (MPK) is:</strong></p>
 <div class="math notranslate nohighlight">
 \[r = A \beta x^{\beta -1}\]</div>
 <p><strong>Write MPK as a function of income per capita:</strong></p>
 <div class="math notranslate nohighlight">
-\[
-r = \beta A^\frac{1}{\beta} y^\frac{\beta -1}{\beta}
-\]</div>
+\[r = \beta A^\frac{1}{\beta} y^\frac{\beta -1}{\beta}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[
-r = A \beta \left ( {\frac{y}{A}} \right ) ^\frac{\beta - 1}{\beta}
-\]</div>
+\[r = A \beta \left ( {\frac{y}{A}} \right ) ^\frac{\beta - 1}{\beta}\]</div>
 <p>Steps:</p>
 <div class="math notranslate nohighlight">
-\[
-y = A x^\beta  
-\]</div>
-<p>so</p>
-<div class="math notranslate nohighlight">
-\[
-x = \left ({\frac{y}{A}}  \right)^\frac{1}{\beta}
-\]</div>
+\[y = A x^\beta  \]</div>
+<p>so
+$<span class="math notranslate nohighlight">\(x = \left ({\frac{y}{A}}  \right)^\frac{1}{\beta}   \)</span>$</p>
 <p>substitute this into <span class="math notranslate nohighlight">\(r = A \beta x^{\beta -1}\)</span></p>
 </div>
 <div class="section" id="the-puzzle">
@@ -530,14 +540,9 @@ x = \left ({\frac{y}{A}}  \right)^\frac{1}{\beta}
 <p>Human capital per worker differs substantially between USA and India. Let’s adapt the framework to take this into account.</p>
 <p>Redefine <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> to be output and capital per <em>effective</em> worker (replace every <span class="math notranslate nohighlight">\(L\)</span> by <span class="math notranslate nohighlight">\(E \cdot L\)</span>).</p>
 <div class="math notranslate nohighlight">
-\[
-y = \frac{AX^\beta (E \cdot L)^{(1-\beta)}}{E \cdot L}
-\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[
-y=Ax^\beta \cdot E ^{-\beta}
-\]</div>
+\[y = \frac{AX^\beta (E \cdot L)^{(1-\beta)}}{E \cdot L}\]</div>
+<p>or
+$<span class="math notranslate nohighlight">\(y=Ax^\beta \cdot E ^{-\beta}\)</span>$</p>
 <p>Lucas’ cites evidence from Anne Krueger that leads him to suggest a value of <span class="math notranslate nohighlight">\(E =5\)</span>, which is to say that for the same technology and capital a US worker produces five times as much as his/her Indian counterpart.</p>
 <p>To see this first note that if we take the ratio of US to Indian income per effective worker we get:</p>
 <div class="math notranslate nohighlight">
@@ -567,20 +572,18 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 </div>
 <div class="section" id="hypothesis-3-capital-market-imperfections">
 <h3>Hypothesis 3: Capital Market Imperfections<a class="headerlink" href="#hypothesis-3-capital-market-imperfections" title="Permalink to this headline">¶</a></h3>
-<p>I haven’t written this up yet…</p>
+<p>Capital flows would be in the form of debt (or share) contracts with loans/investment flowing from rich to poor countries in an initial phase followed by a long repayment phase.   Lucas’ discussion on this topic is limited to observing that one could imagine problems of sovereign default, with debtor country defaulting on repayment obligations, and how the anticipation of this problem might reduce capital flows.  He points out that contracts were more enforceable in the colonial era, as the poor countries were not sovereign so contracts were enforceable throughtout empires yet the same capital flow puzzles persisted.</p>
 </div>
 <div class="section" id="hypothesis-4-market-power-distortions">
 <h3>Hypothesis 4: Market power distortions<a class="headerlink" href="#hypothesis-4-market-power-distortions" title="Permalink to this headline">¶</a></h3>
-<p>This is the least often mentioned but possibly the most interesting of Lucas’ hypotheses.  The hypothesis is that local elites (or ‘an imperial power’) are able to collude to control the entry of capital into India to drive up captial rents and drive down real wages in such a way that increase firm profits.  Implictly the story is that local elites control the organization of production and hence firm profits.</p>
-<p>While at first it might seem far-fetched to believe a story like this in modern times (less far-fetched in the time of the East India Company) there is plenty of evidence that capital inflows into India and other developing countries were historicallycontrolled in part to protect the rents of local elites.  Rajan and Zingales’ (2013) book <a class="reference external" href="http://press.princeton.edu/titles/7822.html">Saving Capitalism from the Capitalists</a> is full of examples of local elites lobbying government bureaucrats to establish market power.</p>
+<p>Lucas last and most intriguing hypothesis, which he partly attributes to Adam Smith, is that local elites (or ‘an imperial power’) might be colluding to limit the entry of capital into poor countries in order to drive up capital rents and drive down real wages in such a way that increase elite earnings from capital and firm profits.</p>
+<p>While it might seem far-fetched to believe a story like this in modern times (less so in East India Company times) there is a considerable literature arguing that local elites lobbty governments for capital controls to protect the rents of local elites.  Rajan and Zingales’ (2013) book <a class="reference external" href="http://press.princeton.edu/titles/7822.html">Saving Capitalism from the Capitalists</a> is full of examples of manipulated local financial markets.</p>
 <p>The elite is assumed to have access to international capital markets where they can borrow capital at the rate <span class="math notranslate nohighlight">\(\rho \)</span></p>
 <p>If the elite ran the country as a monopoly they would choose the capital-labor ratio (by varying how much capital enters the country) to maximize profits per capita:</p>
 <div class="math notranslate nohighlight">
-\[f(x) - \left [{f(x)-xf'(x)} \right ] -rx\]</div>
-<p>Here (by Euler’s Theorem) <span class="math notranslate nohighlight">\(f(x)-xf'(x)\)</span> is the wage.</p>
-<p>Implicit in Lucas’ formulation is the idea that there is a large monopolist and a ‘fringe’ of smaller competitive firms, all producing the common output.  The competitive fringe hires factors until the marginal value product equals the market factor price.  By restricting capital into the economy the monopolists drives up the domestic rental price of capital.  With less capital to work with the competitive fringe hires less labor and this drives down the mearket equilibrium real wage.  Monopolist profits rise due to this monopsony power effect.</p>
-<div class="math notranslate nohighlight">
-\[f(x) - \left [{f(x)-xf'(x)} \right ] -rx\]</div>
+\[f(x) - \left [{f(x)-xf'(x)} \right ] - \rho x\]</div>
+<p>One way to interpret this formulation is that there is a large monopolist that has access to capital at the world interest rate <span class="math notranslate nohighlight">\(r\)</span> but then rents it out at the marked up rate <span class="math notranslate nohighlight">\(f'(x)\)</span> to a ‘fringe’ of smaller competitive firms who produce the common output.  The competitive fringe hires factors until the marginal value product equals the market factor price.  By restricting capital into the economy the monopolists drive up the domestic rental price of capital.  With less capital per worker labor is less productive and this drives down the mearket equilibrium real wage (<span class="math notranslate nohighlight">\(f(x)-xf'(x)\)</span>).</p>
+<p>Let’s plot that profits per capita function (which is also the value of economic rents from capital per capita <span class="math notranslate nohighlight">\((f'(x) - \rho)\cdot x\)</span>:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -592,9 +595,9 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
     <span class="n">prf</span> <span class="o">=</span> <span class="n">profit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">)</span>
     <span class="n">xC</span><span class="p">,</span> <span class="n">xM</span> <span class="o">=</span> <span class="n">xoptimum</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">prf</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">prf</span><span class="p">)</span><span class="o">*</span><span class="mf">1.1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Monopoly Profits&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">prf</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Monopoly Rents&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">xC</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">xM</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
@@ -615,18 +618,18 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Lucas90_41_0.png" src="../_images/Lucas90_41_0.png" />
+<img alt="../_images/Lucas90_39_0.png" src="../_images/Lucas90_39_0.png" />
 </div>
 </div>
-<p>In an open competitive economy all firm profits would be zero and the capital-labor ratio <span class="math notranslate nohighlight">\(x\)</span> would be simply set from</p>
+<p>In an open competitive economy these economic rents would have been driven to zero and the capital-labor ratio <span class="math notranslate nohighlight">\(x\)</span> would be simply set from</p>
 <div class="math notranslate nohighlight">
 \[f'(x) = \rho\]</div>
-<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the world market price of capital.  This implies we can find the capital labor ratio as a function of <span class="math notranslate nohighlight">\(\rho\)</span>:</p>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the world market price of capital.  This implies we can find the competitive equilibrium capital labor ratio as a function of <span class="math notranslate nohighlight">\(\rho\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\beta x^{\beta -1}=ρ\]</div>
 <div class="math notranslate nohighlight">
 \[x = \left ( \frac{\rho}{\beta} \right ) ^\frac{1}{\beta - 1}\]</div>
-<p>Suppose we normalize the world rate or return to capital to <span class="math notranslate nohighlight">\(\rho=0.05\)</span>. Then equlibrium capital per worker in the competitive economy would be:</p>
+<p>Suppose we set the world rate or return to capital to <span class="math notranslate nohighlight">\(\rho=0.05\)</span>. Then equlibrium capital per worker in the competitive economy would be:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.4</span>
@@ -641,19 +644,19 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 </div>
 </div>
 </div>
-<p>The monopolist on the other hand sets x to:</p>
+<p>On the other hand, the monopolist sets x to satisty a first order condition which sets marginal revenue equal to marginal cost:</p>
 <div class="math notranslate nohighlight">
-\[f'(x) = \rho - xf''(x)\]</div>
-<p>Note that <span class="math notranslate nohighlight">\(f''(x)\)</span> can be written:</p>
-<div class="math notranslate nohighlight">
-\[f''(x) =(\beta -1) \frac{f'(x)}{x}\]</div>
-<p>which allows us to simplify the monopoly FOC to:</p>
+\[f'(x) +  xf''(x) = \rho \]</div>
+<p>Note that $<span class="math notranslate nohighlight">\(f''(x) =(\beta -1) \frac{f'(x)}{x}&lt;0\)</span>$</p>
+<p>The monopolist is aware of the downward sloping domestic demand for capital and searches for a profit maximizing price-quantity combination along that curve.</p>
+<p>The monopoly FOC simplifies to:</p>
 <div class="math notranslate nohighlight">
 \[f'(x) = \frac{\rho}{\beta}\]</div>
 <p>Given our assumed value of beta, this means a monopolist might maintain the rate of return on capital <span class="math notranslate nohighlight">\(1/ \beta\)</span> times higher than the international market rate <span class="math notranslate nohighlight">\(\rho\)</span>, and resists capital inflows that might push this rate down.</p>
 <p>Solving for <span class="math notranslate nohighlight">\(x\)</span> in this monopolized market gives:</p>
 <div class="math notranslate nohighlight">
 \[x = \left ( \frac{\rho}{\beta^2} \right ) ^\frac{1}{\beta - 1}\]</div>
+<p>Which is obviously lower than the efficient competitive level.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="p">,</span> <span class="n">xM</span> <span class="o">=</span> <span class="n">xoptimum</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
@@ -669,10 +672,10 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 </div>
 </div>
 </div>
-<p>Indian income per capita will be only</p>
+<p>This implies that Indian income per capita will be only</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:5.0f}</span><span class="s2"> percent&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">xM</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">xC</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">xM</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">xC</span><span class="p">)</span><span class="si">:</span><span class="s1">5.0f</span><span class="si">}</span><span class="s1"> percent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -683,10 +686,10 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 </div>
 </div>
 <p>as high as in a competitive market without barriers to capital inflows.</p>
-<p>This is an inefficient outcome but the elites who capture the profits/rents do pretty well. They earn</p>
-<div class="cell tag_hide-input docutils container">
+<p>This is an inefficient outcome but the elites who capture the profits/rents do well. They earn</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;profits = </span><span class="si">{:5.2f}</span><span class="s1"> or </span><span class="si">{:.0%}</span><span class="s1"> of total output&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">profit</span><span class="p">(</span><span class="n">xM</span><span class="p">,</span> <span class="n">rho</span><span class="p">),</span> <span class="n">profit</span><span class="p">(</span><span class="n">xM</span><span class="p">,</span><span class="n">rho</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">xM</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;profits = </span><span class="si">{</span><span class="n">profit</span><span class="p">(</span><span class="n">xM</span><span class="p">,</span> <span class="n">rho</span><span class="p">)</span><span class="si">:</span><span class="s1">5.2f</span><span class="si">}</span><span class="s1"> or </span><span class="si">{</span><span class="n">profit</span><span class="p">(</span><span class="n">xM</span><span class="p">,</span><span class="n">rho</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">xM</span><span class="p">)</span><span class="si">:</span><span class="s1">.0%</span><span class="si">}</span><span class="s1"> of total output&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -700,14 +703,13 @@ $<span class="math notranslate nohighlight">\(\frac{A_{US}}{A_{IN}} = 5\)</span>
 </div>
 <div class="section" id="extensions">
 <h2>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
-<p>Lucas does not cite their work but models of this sort were explored by trade economists in the 1980s (e.g. Feenstra (1980).</p>
-<p>In a model described later, Conning (2006) explores similar factor market power distortions in a model with heterogenous agents to make predictions about the size distribution of firms within each sector.</p>
+<p>Lucas does not cite their work but models of this sort were explored by trade economists in the 1980s (e.g. Feenstra (1980).  In a later notebook we’ll see Conning (2006) exploration of similar factor market power distortions in a model with heterogenous agents to make predictions about the size distribution of firms within each sector.</p>
 <div class="section" id="solving-for-maxima-and-roots-numerically">
 <h3>Solving for maxima and roots numerically<a class="headerlink" href="#solving-for-maxima-and-roots-numerically" title="Permalink to this headline">¶</a></h3>
-<p>This was an easy model to solve analytically, but let’s solve it numerically to illustrate the use of the root solving (fsolve function from scipy optimize library) and minimization techniques (brentq from the same library). See the code section below first.</p>
+<p>This model was easy to solve analytically, but let’s also solve it numerically just to illustrate the ease of using numerical root solving and minimization techniques in python.</p>
 <p>Let’s setup first order condition functions to find the x that sets them to zero.</p>
-<p>For the competitive case: <span class="math notranslate nohighlight">\(f'(x) - \rho \)</span>
-For the monopoly case:  <span class="math notranslate nohighlight">\(f'(x) - \rho -x f''(x)\)</span></p>
+<p>For the competitive case: <span class="math notranslate nohighlight">\(f'(x) = \rho \)</span>
+For the monopoly case:  <span class="math notranslate nohighlight">\(f'(x)  - x f''(x) = \rho\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cfoc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -719,7 +721,7 @@ For the monopoly case:  <span class="math notranslate nohighlight">\(f'(x) - \rh
 </div>
 </div>
 </div>
-<p>and solve for the root:</p>
+<p>Solve the competitive FOC for <span class="math notranslate nohighlight">\(x\)</span>, by finding the root of <span class="math notranslate nohighlight">\(f'(x)-\rho = 0\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xC</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">cfoc</span><span class="p">,</span> <span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -799,11 +801,11 @@ For the monopoly case:  <span class="math notranslate nohighlight">\(f'(x) - \rh
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="EdgeworthProduction.html" title="previous page">
+        <a class="left-prev" href="neokmodels.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Edgeworth Box: Efficiency in production allocation</p>
+                <p class="prevnext-title">Neo-classical models</p>
             </div>
         </a>
     </div>
