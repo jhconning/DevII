@@ -13,12 +13,16 @@ parts:
      - file: notebooks/StructuralT1
      - file: notebooks/HarrisTodaro
 
-- caption: Institutions and Organization
+- caption: Institutions/Organization
   chapters:
    - file: notebooks/Coase
    - file: notebooks/FarmHousehold
    - file: notebooks/RDD_R.ipynb
+
+
+- caption: slides
+  chapters:
+   - url: https://drive.google.com/file/d/1B_UB32PgV_3X8tYmORv6p5Lm_1VkelU9/view?usp=sharing
+     title: slides to 9/23
    - url: https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing
      title: RDD and Dell (08) Mita
-   - url: https://drive.google.com/file/d/1BYHau4GKCOaop1AMfLJdsZp0-fUIN7RA/view?usp=sharing
-     title: slides 9/23
