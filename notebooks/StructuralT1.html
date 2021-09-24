@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Models of Structural Transformation &#8212; DevII</title>
+    <title>Structural Transformation Notes &#8212; DevII</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -48,9 +48,9 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,6 +75,11 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">DevII</h1>
@@ -94,13 +99,13 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Models
+  Topics
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="neokmodels.html">
-   Neo-classical models
+   Growth + Structural Transformation
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -130,7 +135,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Models of Structural Transformation
+     Structural Transformation Notes
     </a>
    </li>
    <li class="toctree-l2">
@@ -140,27 +145,32 @@
    </li>
   </ul>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Institutions/Organization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Coase.html">
-   Coase and Property
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prodn_org.html">
+   Institutions/Organization
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="FarmHousehold.html">
-   Farm Household Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="RDD_R.html">
-   Research Discontinuity Designs (in R)
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Coase.html">
+     Coase and Property
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FarmHousehold.html">
+     Farm Household Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RDD_R.html">
+     RD designs (in R)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -271,6 +281,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -285,54 +298,49 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Models of Structural Transformation
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#market-clearing-neo-classical-models">
    Market Clearing Neo-Classical Models
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#push-and-or-pull">
      Push and/or Pull
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-open-economy-with-homothetic-preferences">
      The Open Economy with Homothetic Preferences
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#non-homothetic-preferences">
      Non-homothetic preferences
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#closed-economy">
      Closed Economy
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#productivity-growth-caused-by-structural-change">
      Productivity growth caused by Structural Change
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#impediments-to-structural-change">
      Impediments to structural change
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#spillovers-complementarities-and-multiple-equilibria">
      Spillovers, Complementarities, and Multiple Equilibria
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references-cited">
    References Cited
   </a>
@@ -348,9 +356,9 @@
         
               <div>
                 
-  <div class="section" id="models-of-structural-transformation">
-<h1>Models of Structural Transformation<a class="headerlink" href="#models-of-structural-transformation" title="Permalink to this headline">¶</a></h1>
-<p>These notes illustrates and expands upon Kiminori Matsuyama’s excellent short survey:</p>
+  <div class="section" id="structural-transformation-notes">
+<h1>Structural Transformation Notes<a class="headerlink" href="#structural-transformation-notes" title="Permalink to this headline">¶</a></h1>
+<p>Below some brief notes on general equilibrium modeling of structural transformation.  Some of the presentation illustrates and expands upon this short useful survey:</p>
 <blockquote>
 <div><p>Matsuyama, K., 2008. Structural change. in Durlauf and Blume eds. <em>The new Palgrave dictionary of economics</em> 2, pp.</p>
 </div></blockquote>
@@ -367,10 +375,9 @@
 <li><p>Impediments to structural change</p></li>
 <li><p>Spillovers, Complementarities, and Multiple Equilibria</p></li>
 </ul>
-</div>
 <hr class="docutils" />
 <div class="section" id="market-clearing-neo-classical-models">
-<h1>Market Clearing Neo-Classical Models<a class="headerlink" href="#market-clearing-neo-classical-models" title="Permalink to this headline">¶</a></h1>
+<h2>Market Clearing Neo-Classical Models<a class="headerlink" href="#market-clearing-neo-classical-models" title="Permalink to this headline">¶</a></h2>
 <p>Here we seek to explain structural transformation and the accompanying movement of labor out of agriculture and into other sectors in a market-clearing neo-classical model with no market failures.  In these model the marginal value product of labor is the same in both agriculture and manufacturing, hence there is no ‘dualism’ due to market frictions of one kind or another.</p>
 <p>Matsuyama builds a very simple neo-classical model with two sectors (in effect a specific factors model).</p>
 <p><strong>Production</strong></p>
@@ -431,7 +438,7 @@ A_1 F_1^\prime (n) = p A_2 F_2^\prime (1-n)
 </div>
 </div>
 <div class="section" id="push-and-or-pull">
-<h2>Push and/or Pull<a class="headerlink" href="#push-and-or-pull" title="Permalink to this headline">¶</a></h2>
+<h3>Push and/or Pull<a class="headerlink" href="#push-and-or-pull" title="Permalink to this headline">¶</a></h3>
 <p>The large literature on structural transformation often distinguishes between forces that ‘Push’ or ‘Pull’ labor out of agriculture.</p>
 <p>‘Pull’ could come about, for example, via an increase over time of the relative price of manufactures <span class="math notranslate nohighlight">\(p\)</span>, or an increase in relative TFP <span class="math notranslate nohighlight">\(A_2/A_1\)</span>. These have the effect of shifting out the demand for labor (the marginal value product or labor curve <span class="math notranslate nohighlight">\(p A_2 F_2^\prime (1-n)\)</span> relative to that in agriculture, leading to an incipient rise in the manufacturing wage that transforms the economy by attracting labor to that sector.</p>
 <p>As demonstrated below, it’s easy to illustrate Pull effects in this economy with standard homothetic preferences in either the open or closed economy.</p>
@@ -439,7 +446,7 @@ A_1 F_1^\prime (n) = p A_2 F_2^\prime (1-n)
 <p>It turns out one has to be a bit harder to get this effect to emerge in this standard neo-classical model because, as we’ve just argued, raising the relative productivity in a sector tends <em>increase</em> demand for labor unless the relative price of the good happens to simultaneously fall by enough to reverse that effect. As we’ll show one way to engineer such an effect is to assume non-homothetic preferences to rise to a form of Engel’s law or that manufactures have a higher income elasticity of demand, such that the agricultural terms of trade deteriorate against agriculture as incomes expand.</p>
 </div>
 <div class="section" id="the-open-economy-with-homothetic-preferences">
-<h2>The Open Economy with Homothetic Preferences<a class="headerlink" href="#the-open-economy-with-homothetic-preferences" title="Permalink to this headline">¶</a></h2>
+<h3>The Open Economy with Homothetic Preferences<a class="headerlink" href="#the-open-economy-with-homothetic-preferences" title="Permalink to this headline">¶</a></h3>
 <p>In the open-economy version of this model, the relative price of manufactured goods <span class="math notranslate nohighlight">\(p\)</span> is set and fixed on world markets and hence does not change during the period of analysis. We can focus on the optimum production allocation without worrying about preferences, because agents first maximize the value of income at world prices and then choose optimum consumption baskets.</p>
 <p>We can plot labor demand in each sector and solve for the equilibrium labor allocation <span class="math notranslate nohighlight">\(n^*\)</span> that solves:</p>
 <div class="math notranslate nohighlight">
@@ -494,7 +501,7 @@ A_1 F_1^\prime (n) = p A_2 F_2^\prime (1-n)
 <p>Exogenously driven increases in the relative productivity of manufactures drives this ‘pull’ effect. As Matsuyama explains, this is the sort of mechanism envisioned by Lewis (1954) although the Lewis model also has a form of dualism not captured here.  In particular, we can see (from the diagram above) that in these models the expansion of one sector can be choked off by a rising wage. Lewis’ assumption of “unlimited supplies of labor” in agriculture amounts to saying that there will be a very elastic supply of labor aso wages will not be fast to rise.</p>
 </div>
 <div class="section" id="non-homothetic-preferences">
-<h2>Non-homothetic preferences<a class="headerlink" href="#non-homothetic-preferences" title="Permalink to this headline">¶</a></h2>
+<h3>Non-homothetic preferences<a class="headerlink" href="#non-homothetic-preferences" title="Permalink to this headline">¶</a></h3>
 <p>In a closed economy the relative price <span class="math notranslate nohighlight">\(p\)</span> is determined endogenously by a tangency between the PPF and the representative indifference curve. As mentioned above, we’ll need non-homothetic preferences in order to get the kind of ‘Push’ effect used in Gollin et al (2002):</p>
 <p>The consumer has Stone-Geary preferences of the form:</p>
 <div class="math notranslate nohighlight">
@@ -534,7 +541,7 @@ C_1 =\gamma + (\beta p) C_2
 </div>
 </div>
 <div class="section" id="closed-economy">
-<h2>Closed Economy<a class="headerlink" href="#closed-economy" title="Permalink to this headline">¶</a></h2>
+<h3>Closed Economy<a class="headerlink" href="#closed-economy" title="Permalink to this headline">¶</a></h3>
 <p>We’re looking for a tangency between the PPF and the representative agent’s indifference curve, equal to the common price ratio. This <span class="math notranslate nohighlight">\(MRS = p= MPT\)</span> condition can be written:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -627,7 +634,7 @@ A1=2, n=0.48, p=1.63
 </div>
 </div>
 <div class="section" id="productivity-growth-caused-by-structural-change">
-<h2>Productivity growth caused by Structural Change<a class="headerlink" href="#productivity-growth-caused-by-structural-change" title="Permalink to this headline">¶</a></h2>
+<h3>Productivity growth caused by Structural Change<a class="headerlink" href="#productivity-growth-caused-by-structural-change" title="Permalink to this headline">¶</a></h3>
 <p>Matsuyama adds dynamics to the sort of model described above by assuming that TFP growth in manufacturing might respond to “the stock of experience accumulated [in that sector]… through learning-by-doing.”  He captures this by positing that TFP in the sector in period <span class="math notranslate nohighlight">\(t\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -650,33 +657,34 @@ A_1 F_1^\prime (n_t) = p A(Q_t) F_2^\prime (1-n_t)
 <p>This is a version of the so called <em>staple-trap,</em> <em>resource curse,</em> or <em>dutch disease</em>.  Matsuyama (1992) models this type of possibility in richer detail.</p>
 </div>
 <div class="section" id="impediments-to-structural-change">
-<h2>Impediments to structural change<a class="headerlink" href="#impediments-to-structural-change" title="Permalink to this headline">¶</a></h2>
+<h3>Impediments to structural change<a class="headerlink" href="#impediments-to-structural-change" title="Permalink to this headline">¶</a></h3>
 <p>Many studies have modeled impediments to the re-allocation of labor across sectors.</p>
 <p>The most famous of these is the Lewis model which assumes workers in the agricultural sector earn an average product of labor there, leading to overemployment in the sector.  We’ll see several models that try to make sense of this, for example models that attribute this to land property rights insecurity.</p>
 <p>Hayashi and Prescott (2008) argue that agricultural employment in Japan remained virtually constant at 14 million persons from 1885 to WWII (see image below) despite significant expansion in industrial technology capacity in that period. They argue that labor could not easily leave agriculture due to patriarchal customs and norms that made it hard for children of agricultural households to leave the parental household).  Using a calibrated general equilibrium model, the authors argue that the lifting of that barrier in the post-war era (due to various factors including legislation surrounding deep land reforms) explains a good part of the post-war Japanese miracle.</p>
-<p><img alt="" src="../_images/Japan_agemp.png" /></p>
+<a class="bg-primary reference internal image-reference" href="../_images/Japan_agemp.png"><img alt="Japan Ag employment" class="bg-primary" src="../_images/Japan_agemp.png" style="width: 600px;" /></a>
 <p>There are many other models with barriers or frictions in the structural transformation.  One famous model that received a lot of attentiun is the Harris and Todaro (1970) model.  See the separate notebook on this model.</p>
 </div>
 <div class="section" id="spillovers-complementarities-and-multiple-equilibria">
-<h2>Spillovers, Complementarities, and Multiple Equilibria<a class="headerlink" href="#spillovers-complementarities-and-multiple-equilibria" title="Permalink to this headline">¶</a></h2>
+<h3>Spillovers, Complementarities, and Multiple Equilibria<a class="headerlink" href="#spillovers-complementarities-and-multiple-equilibria" title="Permalink to this headline">¶</a></h3>
 <p>Coming soon.</p>
 </div>
 </div>
 <div class="section" id="references-cited">
-<h1>References Cited<a class="headerlink" href="#references-cited" title="Permalink to this headline">¶</a></h1>
+<h2>References Cited<a class="headerlink" href="#references-cited" title="Permalink to this headline">¶</a></h2>
 <p>Harris, J.R., Todaro, M.P., 1970. Migration, unemployment and development: a two-sector analysis. <em>The American economic review</em> 126–142.</p>
 <p>Hayashi, F., Prescott, E.C., 2008. The depressing effect of agricultural institutions on the prewar Japanese economy. <em>Journal of political Economy</em> 116, 573–632.</p>
 <p>Lewis, W.A., 1954. Economic development with unlimited supplies of labour. <em>The Manchester School</em> 22, 139–191.</p>
 <p>Matsuyama, K., 2008. Structural change. <em>The new Palgrave dictionary of economics</em> 2.</p>
 <p>Matsuyama, K., 1992. Agricultural productivity, comparative advantage, and economic growth. <em>Journal of economic theory</em> 58, 317–334.</p>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "jhconning/DevII",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

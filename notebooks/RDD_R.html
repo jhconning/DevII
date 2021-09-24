@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research Discontinuity Designs (in R) &#8212; DevII</title>
+    <title>RD Designs (in R) &#8212; DevII</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -48,9 +48,9 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -74,6 +74,11 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">DevII</h1>
@@ -93,13 +98,13 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Models
+  Topics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="neokmodels.html">
-   Neo-classical models
+   Growth + Structural Transformation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -129,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="StructuralT1.html">
-     Models of Structural Transformation
+     Structural Transformation Notes
     </a>
    </li>
    <li class="toctree-l2">
@@ -139,27 +144,32 @@
    </li>
   </ul>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Institutions/Organization
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Coase.html">
-   Coase and Property
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="prodn_org.html">
+   Institutions/Organization
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="FarmHousehold.html">
-   Farm Household Models
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Research Discontinuity Designs (in R)
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Coase.html">
+     Coase and Property
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FarmHousehold.html">
+     Farm Household Models
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     RD designs (in R)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -270,6 +280,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -359,8 +372,8 @@
         
               <div>
                 
-  <div class="section" id="research-discontinuity-designs-in-r">
-<h1>Research Discontinuity Designs (in R)<a class="headerlink" href="#research-discontinuity-designs-in-r" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="rd-designs-in-r">
+<h1>RD Designs (in R)<a class="headerlink" href="#rd-designs-in-r" title="Permalink to this headline">¶</a></h1>
 <p>This is a jupyter notebook that can be executed with an <a class="reference external" href="https://irkernel.github.io/">R kernel</a> running in the background to execute R code.</p>
 <p>The content below draws heavily upon these two excellent souces:</p>
 <ul class="simple">
@@ -582,8 +595,8 @@ Keele &amp; Titiunik (2014)</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "jhconning/DevII",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

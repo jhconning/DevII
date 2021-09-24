@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neo-classical models &#8212; DevII</title>
+    <title>Growth + Structural Transformation &#8212; DevII</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -46,9 +46,9 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -73,6 +73,11 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">DevII</h1>
@@ -92,13 +97,13 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Models
+  Topics
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Neo-classical models
+   Growth + Structural Transformation
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -128,7 +133,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="StructuralT1.html">
-     Models of Structural Transformation
+     Structural Transformation Notes
     </a>
    </li>
    <li class="toctree-l2">
@@ -138,27 +143,32 @@
    </li>
   </ul>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Institutions/Organization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Coase.html">
-   Coase and Property
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prodn_org.html">
+   Institutions/Organization
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="FarmHousehold.html">
-   Farm Household Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="RDD_R.html">
-   Research Discontinuity Designs (in R)
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Coase.html">
+     Coase and Property
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FarmHousehold.html">
+     Farm Household Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RDD_R.html">
+     RD designs (in R)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -264,9 +274,18 @@
         
               <div>
                 
-  <div class="section" id="neo-classical-models">
-<h1>Neo-classical models<a class="headerlink" href="#neo-classical-models" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="growth-structural-transformation">
+<h1>Growth + Structural Transformation<a class="headerlink" href="#growth-structural-transformation" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Notebook notes on:</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Lucas90.html">Lucas (1990) “Why Doesn’t Capital Flow from Rich to Poor Countries?”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vollrath.html">Volrath (2009) “How important are dual economy effects…”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EdgeworthProduction.html">Edgeworth Box: Efficiency in production allocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SFM.html">The Specific Factors Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StructuralT1.html">Structural Transformation Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HarrisTodaro.html">The Harris-Todaro Model</a></li>
+</ul>
 </div>
 </div>
 
@@ -274,8 +293,8 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "jhconning/DevII",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

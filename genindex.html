@@ -64,6 +64,11 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">DevII</h1>
@@ -83,13 +88,13 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Models
+  Topics
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="notebooks/neokmodels.html">
-   Neo-classical models
+   Growth + Structural Transformation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -119,7 +124,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="notebooks/StructuralT1.html">
-     Models of Structural Transformation
+     Structural Transformation Notes
     </a>
    </li>
    <li class="toctree-l2">
@@ -129,27 +134,32 @@
    </li>
   </ul>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Institutions/Organization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/Coase.html">
-   Coase and Property
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="notebooks/prodn_org.html">
+   Institutions/Organization
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/FarmHousehold.html">
-   Farm Household Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/RDD_R.html">
-   Research Discontinuity Designs (in R)
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Coase.html">
+     Coase and Property
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/FarmHousehold.html">
+     Farm Household Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/RDD_R.html">
+     RD designs (in R)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
