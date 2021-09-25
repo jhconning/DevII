@@ -174,7 +174,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  slides
+  Slides
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -185,7 +185,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference external" href="https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing">
-   RDD and Dell (08) Mita
+   RDD + Dell Mita paper
   </a>
  </li>
 </ul>
@@ -301,11 +301,13 @@
   <a class="reference internal nav-link" href="#sharp-rd">
    Sharp RD
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-from-meyersson-2014">
-   Example from Meyersson (2014)
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-from-meyersson-2014">
+     Example from Meyersson (2014)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#r-code">
@@ -345,21 +347,6 @@
   <a class="reference internal nav-link" href="#geographic-rd-designs">
    Geographic RD designs
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-spatial-rdd-application">
-   A spatial RDD Application:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dell-2010-persistent-effects-of-peru-s-mining-mita">
-     Dell (2010) Persistent Effects of Peru’s Mining
-     <em>
-      Mita
-     </em>
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -412,14 +399,17 @@ D_i= \left\{
 <p><img alt="rdd1" src="../_images/rdd1.PNG" /></p>
 <p>Non-linearity must not be mistaken for a discontinuity.  In this example with linear fits on each side, estimate a positive ‘treatment’ effect. More likely relationship is non-linear with zero treatment effect.</p>
 <p><img alt="Non Linear relationship" src="../_images/rd_nonlin.png" /></p>
-</div>
 <div class="section" id="example-from-meyersson-2014">
-<h2>Example from Meyersson (2014)<a class="headerlink" href="#example-from-meyersson-2014" title="Permalink to this headline">¶</a></h2>
+<h3>Example from Meyersson (2014)<a class="headerlink" href="#example-from-meyersson-2014" title="Permalink to this headline">¶</a></h3>
 <p><strong>Identifying impacts of municipal election victories by Islamic political parties on educational attainment of women</strong></p>
 <p><span class="math notranslate nohighlight">\(X\)</span>   -  <em>running variable</em></p>
 <p><span class="math notranslate nohighlight">\(Y\)</span>   -  <em>outcome</em> women’s high-school completion rate</p>
 <p><span class="math notranslate nohighlight">\(T\)</span>   -  <em>treatment</em> Islamic party comes to power in municipal government</p>
-<div class="cell docutils container">
+</div>
+</div>
+<div class="section" id="r-code">
+<h2>R Code<a class="headerlink" href="#r-code" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#control the size of R plots in jupyter</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
@@ -441,9 +431,6 @@ D_i= \left\{
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="r-code">
-<h2>R Code<a class="headerlink" href="#r-code" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;CIT_2018_Cambridge_polecon.dta&quot;</span><span class="p">)</span>
@@ -502,7 +489,7 @@ D_i= \left\{
 <img alt="../_images/RDD_R_19_0.png" src="../_images/RDD_R_19_0.png" />
 </div>
 </div>
-<p><img alt="Meyersson " src="notebooks/media/Meyersson1.PNG" /></p>
+<p><img alt="Meyersson " src="../_images/Meyersson1.PNG" /></p>
 </div>
 </div>
 <div class="section" id="rd-plots">
@@ -543,7 +530,7 @@ Y_i = f(X_i) +\beta D_i + \epsilon_i
 <p>Andrew Gelman’s <a class="reference external" href="http://andrewgelman.com/2013/08/05/evidence-on-the-impact-of-sustained-use-of-polynomial-regression-on-causal-inference-a-claim-that-coal-heating-is-reducing-lifespan-by-5-years-for-half-a-billion-people/">blog post from 8/13</a> discusses this issue.  See also <a class="reference external" href="https://blogs.worldbank.org/impactevaluations/curves-all-wrong-places-gelman-and-imbens-why-not-use-higher-order-polynomials-rd">Development Impact Blog</a></p>
 <p>Chen et al (2013) “Evidence on the impact of sustained exposure to air pollution on life expectancy from China’s Huai River policy,” <em>PNAS</em>.</p>
 <p><strong>Policy discontinuity</strong>:  North of China’s Huai river free coal for heating is distributed in winter. None ti the south. Using RDD method find total suspended particulates (TSPs) air pollution 55% higher just North of river compared to just south. Estimates China’s coal-burning was reducing lifespan by 5 years for half a billion people.</p>
-<p><img alt="" src="notebooks/media/ChinaRDD.png" /></p>
+<p><img alt="" src="../_images/ChinaRDD.png" /></p>
 <p>Are observations far from threshold affecting polynomial fit, driving results? Smaller estimates with linear fits?</p>
 <p><img alt="" src="notebooks/media/ChinaRDD2.PNG" /></p>
 </div>
@@ -580,13 +567,10 @@ From <a class="reference external" href="http://nrs.harvard.edu/urn-3:HUL.InstRe
 </ul>
 <p><img alt="" src="../_images/2d_distance.PNG" />
 Keele &amp; Titiunik (2014)</p>
-</div>
-<div class="section" id="a-spatial-rdd-application">
-<h2>A spatial RDD Application:<a class="headerlink" href="#a-spatial-rdd-application" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dell-2010-persistent-effects-of-peru-s-mining-mita">
-<h3>Dell (2010) Persistent Effects of Peru’s Mining <em>Mita</em><a class="headerlink" href="#dell-2010-persistent-effects-of-peru-s-mining-mita" title="Permalink to this headline">¶</a></h3>
-<p>Dell, Melissa. 2010. “The Persistent Effects of Peru’s Mining ‘Mita.’” <em>Econometrica</em> 78 (6): 1863–1903.</p>
-<p>Continue to slide notes.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Notes on:
+Dell, Melissa. 2010. “The Persistent Effects of Peru’s Mining ‘Mita.’” <em>Econometrica</em> 78 (6): 1863–1903.</p>
 </div>
 </div>
 </div>
