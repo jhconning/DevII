@@ -4,24 +4,23 @@
 :depth: 3
 ```
 
-Most of the content of this site was created using Jupyter Notebooks as a front-end for mixing markdown text and the output from code written using scientific python  (though in a few places also R and Stata code).
+Most of the content of this site is based on Jupyter Notebooks which serve as a front-end for markdown text and scientific python (R and Stata code in a few books).
 
-I am using [JupyterBook](https://jupyterbook.org/intro.html) which, in turn, leverages the [Sphinx](https://www.sphinx-doc.org/en/master/) documentation system, to weave all the notebooks and text documents together into a single site/publication. Some of the notebooks that embed code can then be run on a jupyter notebook server on the users' personal computer, or in the cloud, to make some of the visualizations and simulations interactive.
-
-In many of the pages based on jupyter notebooks, some of the embedded  python code may be hidden (but can be revealed via a toggle).  The output of the code will usually be displayed as a static image. You can however make the page interactive by running the the jupyter notebook on a jupyter server.  This can be accomplished from the page by clicking the Binder or Google Colab button at the top of most pages which -- after a minute or so of build -- will launch a cloud machine. Alternatively, you can clone github repository that hosts the files onto your local computer and then run the notebooks there on your own local jupyter notebook server.  Here is one [guide](https://www.dataquest.io/blog/jupyter-notebook-tutorial/) on getting started. 
-
-Most users can interact with the content of the site without having to learn how the 'book/website' was built. What follows below are a few pointers and tips only for those who might be curious about how to build a similar site.
-
-I do not recommend trying to build a site until you first get comfortable with jupyter notebooks and git and github. 
+I am using [JupyterBook](https://jupyterbook.org/intro.html) which, in turn, leverages the [Sphinx](https://www.sphinx-doc.org/en/master/) documentation system, to assemble notebooks and text documents into a single site/publication. 
 
 
-## Concepts
+Some of the embedded  python code has been hidden on webpages but can be revealed via a toggle.  The output of the code will usually be displayed as a static image.  Most of the underlying notebooks can be run to interactively to reproduce or change visualizations and simulations. You can do this using a cloud server by clicking on the Binder or Colab button at the rocket icon at the top of most pages.  Alternatively, first clone the notebooks to a personal computer and run a jupyter server there. Here is one [guide](https://www.dataquest.io/blog/jupyter-notebook-tutorial/) to that process. 
 
-The aim is to create content using easy human-readable [markdown](https://www.markdownguide.org/getting-started/) in combination with python (or other coding languages) to explore ideas and create scientific content with simulations and visualizations and to then convert this via a nice looking rendered website and/or to other intermediary or final formats such as Latex, PDF, etc.  In short, we want to get a nice looking website and 'book' content for sharing reproducible research without having to learn (too much) HTML/CSS, Latex or other technical content.
- 
+I do not recommend trying to build a jupyter book site until you first get comfortable with jupyter notebooks and git and github. But for those who may be interested, read on. 
+
+
+## Jupyter Book Concepts
+
 Jupyterbook was created to assemble markdown text files, jupyter notebooks and other shareable content into publication quality output in the form of websites, late or PDF documents, etc. Jupyterbook is part of [The Executable Book Project](https://executablebooks.org/en/latest/).  Many Executable Books and Courses are being written using Jupyterbook. See the [Gallery of Jupyter Books](https://executablebooks.org/en/latest/gallery.html).  Several of the people behind the [Quantecon](https://quantecon.org/) project (which provides high-quality interactive Economics PhD Economics learning materials written mostly in scientific python and Julia), were important in the development of Jupyter Book.
 
-Jupyterbook extends the simple markdown syntax typically used for jupyter notebooks by adding extra [MyST Markdown](https://jupyterbook.org/content/myst.html) 'directives' and 'roles' to allow us several 'book writing' tasks including adding bibliographic citations and bibliographies, numberering equations, adding cross-references, creating tabs and dropdowns, etc. MyST also gives us more fine control over things such as image size and positioning on a page, figure captioning, hiding code, etc.
+The aim is to create content using easy human-readable [markdown](https://www.markdownguide.org/getting-started/) in combination with python (or other coding languages) to explore ideas and create scientific content with simulations and visualizations and to then convert this via a nice looking rendered website and/or to other intermediary or final formats such as Latex, PDF, etc.  In short, we want an easy to update and nice looking website/book for sharing reproducible research but without having to learn (too much) HTML/CSS or technical details of site hosting.
+
+Jupyterbook extends the basic markdown syntax typically used for jupyter notebooks by adding extra [MyST Markdown](https://jupyterbook.org/content/myst.html) 'directives' and 'roles' to allow us several 'book writing' tasks including adding bibliographic citations and bibliographies, numberering equations, adding cross-references, creating tabs and dropdowns, etc. This also gives more fine control over things such as image size and positioning on a page, figure captioning, features to hide code, create warning boxes, etc.
 
 ## Setup and Build
 

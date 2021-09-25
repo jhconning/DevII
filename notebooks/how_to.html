@@ -295,8 +295,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts">
-   Concepts
+  <a class="reference internal nav-link" href="#jupyter-book-concepts">
+   Jupyter Book Concepts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -332,7 +332,7 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#jupyter-book-build" id="id3">Jupyter Book Build</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concepts" id="id4">Concepts</a></p></li>
+<li><p><a class="reference internal" href="#jupyter-book-concepts" id="id4">Jupyter Book Concepts</a></p></li>
 <li><p><a class="reference internal" href="#setup-and-build" id="id5">Setup and Build</a></p></li>
 <li><p><a class="reference internal" href="#github-actions-and-webpage" id="id6">Github Actions and webpage</a></p></li>
 <li><p><a class="reference internal" href="#workflow" id="id7">Workflow</a></p></li>
@@ -340,16 +340,15 @@
 </li>
 </ul>
 </div>
-<p>Most of the content of this site was created using Jupyter Notebooks as a front-end for mixing markdown text and the output from code written using scientific python  (though in a few places also R and Stata code).</p>
-<p>I am using <a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a> which, in turn, leverages the <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> documentation system, to weave all the notebooks and text documents together into a single site/publication. Some of the notebooks that embed code can then be run on a jupyter notebook server on the users’ personal computer, or in the cloud, to make some of the visualizations and simulations interactive.</p>
-<p>In many of the pages based on jupyter notebooks, some of the embedded  python code may be hidden (but can be revealed via a toggle).  The output of the code will usually be displayed as a static image. You can however make the page interactive by running the the jupyter notebook on a jupyter server.  This can be accomplished from the page by clicking the Binder or Google Colab button at the top of most pages which – after a minute or so of build – will launch a cloud machine. Alternatively, you can clone github repository that hosts the files onto your local computer and then run the notebooks there on your own local jupyter notebook server.  Here is one <a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">guide</a> on getting started.</p>
-<p>Most users can interact with the content of the site without having to learn how the ‘book/website’ was built. What follows below are a few pointers and tips only for those who might be curious about how to build a similar site.</p>
-<p>I do not recommend trying to build a site until you first get comfortable with jupyter notebooks and git and github.</p>
-<div class="section" id="concepts">
-<h2><a class="toc-backref" href="#id4">Concepts</a><a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<p>The aim is to create content using easy human-readable <a class="reference external" href="https://www.markdownguide.org/getting-started/">markdown</a> in combination with python (or other coding languages) to explore ideas and create scientific content with simulations and visualizations and to then convert this via a nice looking rendered website and/or to other intermediary or final formats such as Latex, PDF, etc.  In short, we want to get a nice looking website and ‘book’ content for sharing reproducible research without having to learn (too much) HTML/CSS, Latex or other technical content.</p>
+<p>Most of the content of this site is based on Jupyter Notebooks which serve as a front-end for markdown text and scientific python (R and Stata code in a few books).</p>
+<p>I am using <a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a> which, in turn, leverages the <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> documentation system, to assemble notebooks and text documents into a single site/publication.</p>
+<p>Some of the embedded  python code has been hidden on webpages but can be revealed via a toggle.  The output of the code will usually be displayed as a static image.  Most of the underlying notebooks can be run to interactively to reproduce or change visualizations and simulations. You can do this using a cloud server by clicking on the Binder or Colab button at the rocket icon at the top of most pages.  Alternatively, first clone the notebooks to a personal computer and run a jupyter server there. Here is one <a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">guide</a> to that process.</p>
+<p>I do not recommend trying to build a jupyter book site until you first get comfortable with jupyter notebooks and git and github. But for those who may be interested, read on.</p>
+<div class="section" id="jupyter-book-concepts">
+<h2><a class="toc-backref" href="#id4">Jupyter Book Concepts</a><a class="headerlink" href="#jupyter-book-concepts" title="Permalink to this headline">¶</a></h2>
 <p>Jupyterbook was created to assemble markdown text files, jupyter notebooks and other shareable content into publication quality output in the form of websites, late or PDF documents, etc. Jupyterbook is part of <a class="reference external" href="https://executablebooks.org/en/latest/">The Executable Book Project</a>.  Many Executable Books and Courses are being written using Jupyterbook. See the <a class="reference external" href="https://executablebooks.org/en/latest/gallery.html">Gallery of Jupyter Books</a>.  Several of the people behind the <a class="reference external" href="https://quantecon.org/">Quantecon</a> project (which provides high-quality interactive Economics PhD Economics learning materials written mostly in scientific python and Julia), were important in the development of Jupyter Book.</p>
-<p>Jupyterbook extends the simple markdown syntax typically used for jupyter notebooks by adding extra <a class="reference external" href="https://jupyterbook.org/content/myst.html">MyST Markdown</a> ‘directives’ and ‘roles’ to allow us several ‘book writing’ tasks including adding bibliographic citations and bibliographies, numberering equations, adding cross-references, creating tabs and dropdowns, etc. MyST also gives us more fine control over things such as image size and positioning on a page, figure captioning, hiding code, etc.</p>
+<p>The aim is to create content using easy human-readable <a class="reference external" href="https://www.markdownguide.org/getting-started/">markdown</a> in combination with python (or other coding languages) to explore ideas and create scientific content with simulations and visualizations and to then convert this via a nice looking rendered website and/or to other intermediary or final formats such as Latex, PDF, etc.  In short, we want an easy to update and nice looking website/book for sharing reproducible research but without having to learn (too much) HTML/CSS or technical details of site hosting.</p>
+<p>Jupyterbook extends the basic markdown syntax typically used for jupyter notebooks by adding extra <a class="reference external" href="https://jupyterbook.org/content/myst.html">MyST Markdown</a> ‘directives’ and ‘roles’ to allow us several ‘book writing’ tasks including adding bibliographic citations and bibliographies, numberering equations, adding cross-references, creating tabs and dropdowns, etc. This also gives more fine control over things such as image size and positioning on a page, figure captioning, features to hide code, create warning boxes, etc.</p>
 </div>
 <div class="section" id="setup-and-build">
 <h2><a class="toc-backref" href="#id5">Setup and Build</a><a class="headerlink" href="#setup-and-build" title="Permalink to this headline">¶</a></h2>
