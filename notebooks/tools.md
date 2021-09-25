@@ -10,6 +10,8 @@ This site was built mostly using open-source scientific computing tools. Here is
 ## [Markdown](https://commonmark.org/)
 plain text format for writing structured documents. To make materials accessible and human-readable, all text, code, and math should be written in plain text files. Markdown syntax simply indicates how to structure that text (e.g. `_italics_` produces _italics_).  We mix markdown text with [LaTex](https://en.wikipedia.org/wiki/LaTeX) syntax to render math expressions. 
 
+There are many good markdown editors.  I recommend [Visual Studio Code](https://code.visualstudio.com) (with enhanced markdown preview extension) and [Typora](https://typora.io). VS Code also serves as powerful integrated Development Environment (IDE) for editing notebooks and keeping files organized.
+
 
 ## [Scientific computing with python and R](https://docs.python-guide.org/scenarios/scientific/). 
 
@@ -24,6 +26,8 @@ Python is a popular, easy to learn general purpose programming language. R is an
   - [ipywidgets](https://ipywidgets.readthedocs.io/) - interactive widget control over jupyter notebooks for sliders and many other inteactive elements.
 
 Very similar libraries exist for R. 
+
+There is a larger 'stack' of libraries that together make up the scientific computing environment. In the early days of open-source computing it was very difficult to keep these all working together but solutions such as [anaconda](https://www.anaconda.com/products/individual) have simplified the process to one download file and a one-click installation.  
 
 R versus python?  Try both. If your main purpose is econometrics and statistical computing, R has the more complete libraries for this purpose (although for machine learning, many people prefer python). Python might be a bit easier to learn and perhaps more versatile as a general purpose language with a wider user base, but this is a matter of opinion as R people will tell you there is very little they can't do. For building and solving general equilibrium models using numerical methods, python is a good choice,  particularly if you are coming from matlab. The  [QuantEcon](https://quantecon.org/) has good guides to scientific computing in python for economists.
 

@@ -12,6 +12,8 @@ In many of the pages based on jupyter notebooks, some of the embedded  python co
 
 Most users can interact with the content of the site without having to learn how the 'book/website' was built. What follows below are a few pointers and tips only for those who might be curious about how to build a similar site.
 
+I do not recommend trying to build a site until you first get comfortable with jupyter notebooks and git and github. 
+
 
 ## Concepts
 
@@ -46,9 +48,6 @@ When I'm satisified that new content is ready to be shared I will then push the 
 
 
 The following is a jupyterbook report on the build process to create this site:
-
-```{nb-exec-table}
-```
 
 
 [^1]: Enable Github pages in the github settings.  Also make sure that your version of the [book.yml](https://github.com/jhconning/DevII/blob/master/.github/workflows/book.yml) file points to the right branch (e.g. 'main' or 'master').
