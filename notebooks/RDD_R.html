@@ -441,29 +441,34 @@ D_i= \left\{
 <h2>R Code<a class="headerlink" href="#r-code" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#control the size of R plots in jupyter</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&#39;rdrobust&#39;)  #install rbrobust if needed</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">7</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span> <span class="c1">#control the size of R plots in jupyter</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load R libraries</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">foreign</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">lpdensity</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">rddensity</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">rdrobust</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">rdlocrand</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">TeachingDemos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registered S3 methods overwritten by &#39;ggplot2&#39;:
+  method         from 
+  [.quosures     rlang
+  c.quosures     rlang
+  print.quosures rlang
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;CIT_2018_Cambridge_polecon.dta&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;data/CIT_2018_Cambridge_polecon.dta&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -482,8 +487,9 @@ D_i= \left\{
 <p>If we simply compare outcomes in treated (Islamic major) and non-treated areas (secular major), we find lower female educational attainment in areas where Islamic parties won.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
-       <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> 
+       <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> 
+       <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -499,7 +505,7 @@ D_i= \left\{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">50</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">50</span><span class="p">],</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> 
-       <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>  <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> 
+       <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>  <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> 
        <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -510,7 +516,7 @@ D_i= \left\{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">],</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="nf">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">],</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2500</span><span class="p">,</span> <span class="m">500</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col.lines</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">col.dots</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
        <span class="n">x.label</span> <span class="o">=</span> <span class="s">&quot;Islamic Margin of Victory&quot;</span><span class="p">,</span> <span class="n">y.label</span> <span class="o">=</span> <span class="s">&quot;Female High School Share&quot;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">70</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -536,8 +542,8 @@ D_i= \left\{
 <p>Plenty of variation in bin and bandwidth selection and curve fitting based on these concepts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">20</span><span class="p">),</span> <span class="n">binselect</span> <span class="o">=</span> <span class="s">&#39;esmv&#39;</span><span class="p">,</span> <span class="n">x.label</span> <span class="o">=</span> <span class="s">&#39;Running Variable&#39;</span><span class="p">,</span> <span class="n">y.label</span> <span class="o">=</span> <span class="s">&#39;Outcome&#39;</span><span class="p">,</span> 
-       <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">25</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rdplot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">20</span><span class="p">),</span> <span class="n">binselect</span> <span class="o">=</span> <span class="s">&#39;esmv&#39;</span><span class="p">,</span> <span class="n">x.label</span> <span class="o">=</span> <span class="s">&#39;Running Variable&#39;</span><span class="p">,</span> 
+       <span class="n">y.label</span> <span class="o">=</span> <span class="s">&#39;Outcome&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">y.lim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">25</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -560,7 +566,7 @@ Y_i = f(X_i) +\beta D_i + \epsilon_i
 <p>Andrew Gelman’s <a class="reference external" href="http://andrewgelman.com/2013/08/05/evidence-on-the-impact-of-sustained-use-of-polynomial-regression-on-causal-inference-a-claim-that-coal-heating-is-reducing-lifespan-by-5-years-for-half-a-billion-people/">blog post from 8/13</a> discusses this issue.  See also <a class="reference external" href="https://blogs.worldbank.org/impactevaluations/curves-all-wrong-places-gelman-and-imbens-why-not-use-higher-order-polynomials-rd">Development Impact Blog</a></p>
 <p>Chen et al (2013) “Evidence on the impact of sustained exposure to air pollution on life expectancy from China’s Huai River policy,” <em>PNAS</em>.</p>
 <p><strong>Policy discontinuity</strong>:  North of China’s Huai river free coal for heating is distributed in winter. None ti the south. Using RDD method find total suspended particulates (TSPs) air pollution 55% higher just North of river compared to just south. Estimates China’s coal-burning was reducing lifespan by 5 years for half a billion people.</p>
-<p><img alt="" src="../_images/ChinaRDD.png" /></p>
+<a class="bg-primary reference internal image-reference" href="../_images/ChinaRDD.png"><img alt="China RDD" class="bg-primary" src="../_images/ChinaRDD.png" style="width: 600px;" /></a>
 <p>Are observations far from threshold affecting polynomial fit, driving results? Smaller estimates with linear fits?</p>
 <p><img alt="" src="notebooks/media/ChinaRDD2.PNG" /></p>
 </div>
@@ -593,14 +599,12 @@ From <a class="reference external" href="http://nrs.harvard.edu/urn-3:HUL.InstRe
 <div class="section" id="geographic-rd-designs">
 <h2>Geographic RD designs<a class="headerlink" href="#geographic-rd-designs" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Latitude, Longitude forcing variables. Collapse to one-dimensional distance (e.g. ‘distance to border’) problematic.</p></li>
+<li><p>Latitude, Longitude forcing variables. Collapse to one-dimensional distance (e.g. ‘distance to border’) problematic.  The following image from Keele &amp; Titiunik (2014).</p></li>
 </ul>
-<p><img alt="" src="../_images/2d_distance.PNG" />
-Keele &amp; Titiunik (2014)</p>
+<a class="bg-primary reference internal image-reference" href="../_images/2d_distance.PNG"><img alt="2d_distance" class="bg-primary" src="../_images/2d_distance.PNG" style="width: 600px;" /></a>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Notes on:
-Dell, Melissa. 2010. “The Persistent Effects of Peru’s Mining ‘Mita.’” <em>Econometrica</em> 78 (6): 1863–1903.</p>
+<p>Dell, Melissa. 2010. “The Persistent Effects of Peru’s Mining ‘Mita.’” <em>Econometrica</em> 78 (6): 1863–1903.</p>
 </div>
 </div>
 </div>
