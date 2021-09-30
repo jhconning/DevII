@@ -1,4 +1,4 @@
-# Jupyter Book Build
+# Building a Jupyter Book
 
 ```{contents}
 :depth: 3
