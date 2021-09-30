@@ -135,3 +135,12 @@ def plot_farmconsumption(Tbar, Lbar, w, alpha=ALPHA, beta=BETA, ax=None):
     ax.annotate('',(0,7),(l_opt,7),arrowprops={'arrowstyle':'<-'})
 
 
+def farmHHplot(W, TBAR):
+    fig, ax = plt.subplots(figsize=(10,8))
+    plot_production(TBAR,LBAR,W)
+    plot_farmconsumption(TBAR, LBAR, W)
+    ax.set_title("The Separable Household Model")
+    ax.set_xlim(0,LBAR+20)
+    ax.set_ylim(0,F(TBAR,LBAR)+20)
+    plt.show()
+    
