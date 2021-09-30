@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm HH pset soln &#8212; Dev II - Development Notebooks</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Scientific Stack" href="tools.html" />
+    <link rel="prev" title="Econ 842 Fall 2021" href="../course/classf21.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dev II - Development Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Dev II - Development Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Development Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="neokmodels.html">
+   Growth + Structural Transformation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lucas90.html">
+     Lucas (1990) “Why Doesn’t Capital Flow from Rich to Poor Countries?”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Vollrath.html">
+     Volrath (2009) “How important are dual economy effects…”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EdgeworthProduction.html">
+     Edgeworth Box: Efficiency in production allocation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SFM.html">
+     The Specific Factors Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="StructuralT1.html">
+     Structural Transformation Notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HarrisTodaro.html">
+     The Harris-Todaro Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prodn_org.html">
+   Production Organization/Institutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Coase.html">
+     Coase and Property
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FarmHousehold.html">
+     Farm Household Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RDD_R.html">
+     RD designs (in R)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Econ 842 Materials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/classf21.html">
+   Econ 842 Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Farm HH pset soln
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tools.html">
+   The Scientific Stack
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="how_to.html">
+     Building a Jupyter Book
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/FarmHH_pset.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhconning/DevII"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jhconning/DevII/main?urlpath=tree/notebooks/FarmHH_pset.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/jhconning/DevII/blob/main/notebooks/FarmHH_pset.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="farm-hh-pset-soln">
+<h1>Farm HH pset soln<a class="headerlink" href="#farm-hh-pset-soln" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">farmhh</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem Set 1</strong></p>
+<p>Please read the notes on <a class="reference internal" href="FarmHousehold.html"><span class="doc std std-doc">Farm Household Models</span></a> and answer the questions in this Problem Set. Solutions:</p>
+<ol>
+<li><p>A farm household’s preferences over consumption (of corn) and leisure are
+summarized by the utility function , where <em>c</em> is daily corn consumption and
+<em>l</em> is daily leisure in hours. For simplicity assume just one household
+member (call him Joe) with a daily labor endowment of hours. The market wage
+rate is <em>w</em> and the price of consumption is p. The household also owns units
+of land. There is no market for land. By applying his own and/or hired labor
+<em>L</em> to this fixed size plot the household member can produce units of corn
+which he can sell or consume.</p>
+<p>Farm production is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    F(\bar T, L) =  \bar T^\alpha \cdot L
+    \]</div>
+</li>
+</ol>
+<p>Let’s assume <span class="math notranslate nohighlight">\(\alpha = 1/2\)</span> so and the household has <span class="math notranslate nohighlight">\(\bar T_i = 4\)</span> units of land, so that  <span class="math notranslate nohighlight">\(F(T,L) = 2 \sqrt L\)</span></p>
+<p><strong>Answer:</strong> No question has been asked yet, but the household’s problem is to maximize utility over consumption <span class="math notranslate nohighlight">\(c_i\)</span> and leisure <span class="math notranslate nohighlight">\(l_i\)</span>, given the budget constraint that the value of consumption cannot exceed income from farm profits plus market wages, given by the product of the market wage times labor supply to the market <span class="math notranslate nohighlight">\((\bar L - l_i)\)</span>.  We have assumed that there is no land market (so each household farms with available land endowment <span class="math notranslate nohighlight">\(\bar T_i\)</span> but that labor markets are competitive.   The farmers optimization problem then becomes nested and separable.  We can think of the household as maximizing utility over consumption and leisure subject to a budget constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{c_i,l_i} U(c_i,l_i)
+\]</div>
+<p>subject to</p>
+<div class="math notranslate nohighlight">
+\[
+p\cdot c_i \leq \Pi(p,w,q;\bar T_i) + w \cdot (\bar L - l_i)
+\]</div>
+<p>We can think of the farm as a separable firm as choosing the optimal level of labor input <span class="math notranslate nohighlight">\(L_i\)</span> (of own and/or hired labor) to maximize profits:</p>
+<div class="math notranslate nohighlight">
+\[
+\Pi(p, w, r;\bar T_i) = \max_{L_i} p \cdot F(\bar T_i, L_i) - w \cdot L_i
+\]</div>
+<p>and then using this maximized level of profits as part of income.</p>
+<p>An equivalent but slightly different way of stating the budget constraint is tha the vlaue of consumption and leisure purchases cannot exceed income generated from farm profits plus the sale of the available labor endowment.  Here the housheold ‘purchases’ leisure:</p>
+<div class="math notranslate nohighlight">
+\[
+p\cdot c_i + w \cdot l_i \leq \Pi(p,w; \bar T_i) - w \cdot L_i\]</div>
+<ol class="simple">
+<li><p><strong>The farm profits are given by . Given , <span class="math notranslate nohighlight">\(w=1\)</span> and <span class="math notranslate nohighlight">\(p=1\)</span> and that the farmer has <span class="math notranslate nohighlight">\(\bar T =100\)</span> units of land, what is the farmer’s
+profit maximizing labor input choice <span class="math notranslate nohighlight">\(L_i^*\)</span>? How much profit does he earn?</strong></p></li>
+</ol>
+<p>Since the farm household problem is separable we first find maximized farm profits.  The FOC for profit maximization are:</p>
+<div class="math notranslate nohighlight">
+\[
+p \cdot F_L = w
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha \cdot p \cdot \frac{\sqrt{\bar T}}{\sqrt L}  = w
+\]</div>
+<p>which we can solve</p>
+<div class="math notranslate nohighlight">
+\[
+L_i = \frac{ \alpha^2 p^2}{w^2}  \cdot \bar T_i
+\]</div>
+<p>So when <span class="math notranslate nohighlight">\(\alpha=1/2\)</span>, <span class="math notranslate nohighlight">\(w=1\)</span>, <span class="math notranslate nohighlight">\(p=1\)</span> and <span class="math notranslate nohighlight">\(\bar T = 100\)</span>, the optimal labor input is:  <span class="math notranslate nohighlight">\(L_i = \frac{1}{4} \cdot T_i = 25\)</span> units of labor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ALPHA</span> <span class="o">=</span> <span class="mf">0.5</span>    <span class="c1"># land share in production</span>
+<span class="n">BETA</span> <span class="o">=</span> <span class="mf">0.7</span>     <span class="c1"># consumption share</span>
+<span class="n">TBAR</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># household land endowment</span>
+<span class="n">LBAR</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># household labor endowment</span>
+
+<span class="n">W</span><span class="o">=</span><span class="mi">1</span>            <span class="c1"># nominal wage</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LD</span><span class="p">,</span> <span class="n">profit</span> <span class="o">=</span> <span class="n">farm_optimum</span><span class="p">(</span><span class="n">TBAR</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">ALPHA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Optimal labor input is Li = </span><span class="si">{</span><span class="n">LD</span><span class="si">:</span><span class="s1">4.1f</span><span class="si">}</span><span class="s1"> units of labor; Maximized Profit = </span><span class="si">{</span><span class="n">profit</span><span class="si">:</span><span class="s1"> 4.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal labor input is Li = 25.0 units of labor; Maximized Profit =  25.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this information we know household income is:  <span class="math notranslate nohighlight">\(I = w \bar L + \Pi(p,w;\bar T_i) = 1 \cdot 100 + 25 = 125\)</span></p>
+<p>Since preferences are Cobb-Douglas, we have very simple Marshallian demands for consumption and leisure:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+c(p,w, I) &amp;= \beta \cdot \frac{I}{p}   \\
+l(p,w, I) &amp;= (1-\beta) \cdot \frac{I}{w}  
+\end{aligned}
+\end{split}\]</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">utility</span> <span class="o">=</span> <span class="n">HH_optimum</span><span class="p">(</span><span class="n">TBAR</span><span class="p">,</span> <span class="n">LBAR</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">ALPHA</span><span class="p">,</span> <span class="n">BETA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Household consumption is C = </span><span class="si">{</span><span class="n">C</span><span class="si">:</span><span class="s1">4.1f</span><span class="si">}</span><span class="s1">, leisure l = </span><span class="si">{</span><span class="n">l</span><span class="si">:</span><span class="s1">4.1f</span><span class="si">}</span><span class="s1">, and maximized utility = </span><span class="si">{</span><span class="n">utility</span><span class="si">:</span><span class="s1"> 4.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The household labor supply (LBAR- l) = </span><span class="si">{</span><span class="n">LBAR</span> <span class="o">-</span> <span class="n">l</span><span class="si">:</span><span class="s1">4.1f</span><span class="si">}</span><span class="s1">, and the farm hires out (hires in)  = </span><span class="si">{</span><span class="n">LBAR</span> <span class="o">-</span> <span class="n">l</span> <span class="o">-</span><span class="n">LD</span><span class="si">:</span><span class="s1"> 4.1f</span><span class="si">}</span><span class="s1"> units of labor&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.0 125.0
+Household consumption is C = 87.5, leisure l = 37.5, and maximized utility =  67.9
+The household labor supply (LBAR- l) = 62.5, and the farm hires out (hires in)  =  37.5 units of labor
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plot_production</span><span class="p">(</span><span class="n">TBAR</span><span class="p">,</span><span class="n">LBAR</span><span class="p">,</span><span class="n">W</span><span class="p">)</span>
+<span class="n">plot_farmconsumption</span><span class="p">(</span><span class="n">TBAR</span><span class="p">,</span> <span class="n">LBAR</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;The Separable Household Model&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">LBAR</span><span class="o">+</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">F</span><span class="p">(</span><span class="n">TBAR</span><span class="p">,</span><span class="n">LBAR</span><span class="p">)</span><span class="o">+</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.0 125.0
+</pre></div>
+</div>
+<img alt="../_images/FarmHH_pset_15_1.png" src="../_images/FarmHH_pset_15_1.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "jhconning/DevII",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../course/classf21.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Econ 842 Fall 2021</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="tools.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">The Scientific Stack</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Jonathan Conning<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

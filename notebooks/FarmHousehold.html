@@ -179,10 +179,22 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/classf21.html">
    Econ 842 Fall 2021
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FarmHH_pset.html">
+     Farm HH pset soln
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -195,8 +207,8 @@
   <a class="reference internal" href="tools.html">
    The Scientific Stack
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -527,27 +539,6 @@ p \cdot F_L (\bar T_i,L) = w
 <div class="math notranslate nohighlight">
 \[I = \Pi(w,\bar T) + w \cdot \bar L\]</div>
 <p>In what follows we shall normalize the product price <span class="math notranslate nohighlight">\(p\)</span> to unity.  This is without loss of generality as all that matters for real allocations is the relative price of labor (or leisure) relative to output, or the real wage <span class="math notranslate nohighlight">\(\frac{w}{p}\)</span>.  So in all the expressions that follow when we see <span class="math notranslate nohighlight">\(w\)</span> it should be thought of as <span class="math notranslate nohighlight">\(\frac{w}{p}\)</span></p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">farm_optimum</span><span class="p">(</span><span class="n">Tbar</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns optimal labor demand and profits&quot;&quot;&quot;</span>
-    <span class="n">LD</span> <span class="o">=</span> <span class="n">Tbar</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="n">w</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">profit</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">Tbar</span><span class="p">,</span> <span class="n">LD</span><span class="p">)</span> <span class="o">-</span> <span class="n">w</span><span class="o">*</span><span class="n">LD</span>
-    <span class="k">return</span> <span class="n">LD</span><span class="p">,</span> <span class="n">profit</span>
-
-<span class="k">def</span> <span class="nf">HH_optimum</span><span class="p">(</span><span class="n">Tbar</span><span class="p">,</span> <span class="n">Lbar</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">BETA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns optimal consumption, leisure and utility.</span>
-<span class="sd">       Simple Cobb-Douglas choices from calculated income &quot;&quot;&quot;</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">profits</span> <span class="o">=</span> <span class="n">farm_optimum</span><span class="p">(</span><span class="n">Tbar</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>  
-    <span class="n">income</span> <span class="o">=</span> <span class="n">profits</span> <span class="o">+</span> <span class="n">w</span><span class="o">*</span><span class="n">Lbar</span>
-    <span class="n">consumption</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">income</span>
-    <span class="n">leisure</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">income</span><span class="o">/</span><span class="n">w</span>
-    <span class="n">utility</span> <span class="o">=</span> <span class="n">U</span><span class="p">(</span><span class="n">consumption</span><span class="p">,</span> <span class="n">leisure</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">consumption</span><span class="p">,</span> <span class="n">leisure</span><span class="p">,</span> <span class="n">utility</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Let’s assume the market real wage starts at unity:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,7 +561,7 @@ p \cdot F_L (\bar T_i,L) = w
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/FarmHousehold_39_0.png" src="../_images/FarmHousehold_39_0.png" />
+<img alt="../_images/FarmHousehold_38_0.png" src="../_images/FarmHousehold_38_0.png" />
 </div>
 </div>
 <p>Here below is the same household when facing a much lower wage (55% of the wage in the diagram above). At this lower wage the farm will want to hire more labor to expand output on the farm and also cut back on labor sold to the market (expand leisure). This household becomes a net hirer of workers.</p>
@@ -587,7 +578,7 @@ p \cdot F_L (\bar T_i,L) = w
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/FarmHousehold_41_0.png" src="../_images/FarmHousehold_41_0.png" />
+<img alt="../_images/FarmHousehold_40_0.png" src="../_images/FarmHousehold_40_0.png" />
 </div>
 </div>
 </div>
