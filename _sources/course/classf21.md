@@ -3,15 +3,19 @@
 ```{contents}
 ```
 
-## Syllabus and Slides
+## Syllabus and Materials
 
 - Syllabus: [DevII Fall 2021](https://drive.google.com/file/d/1Mp3PpgudOVyCmTZG9z78oD6UY7dtcvV5/view?usp=sharing)
 
-- Slides: [Through 9/30](https://drive.google.com/file/d/1B_UB32PgV_3X8tYmORv6p5Lm_1VkelU9/view?usp=sharing).  See below for links to other materials and resources by topic.
+- [DevII-fall21 github repository](https://github.com/jhconning/DevII-fall21/) (private). For sharing materials and discussion.
+  
+- Slides: [Through 9/30](https://drive.google.com/file/d/1B_UB32PgV_3X8tYmORv6p5Lm_1VkelU9/view?usp=sharing).  See below at the top of each new topic for links to relevant notebooks and other materials.
 
 ## Topics, Readings, and Slides
 
 ### Introductions
+
+Notebooks: [Lucas90](../notebooks/Lucas90.ipynb)
 
 \* Allen, R.C., 2011. _Global economic history: a very short introduction_. Oxford University Press. Chs 1-4.
 
@@ -21,6 +25,8 @@
 
 ### Theoretical frames and empirical puzzles
 
+Notebooks: [Vollrath](../notebooks/Vollrath.ipynb), [EdgeworthProduction](../notebooks/EdgeworthProduction.ipynb)
+
 \* Banerjee, A.V., Duflo, E., 2005. Chapter 7 "Growth Theory through the Lens of Development Economics", in: Aghion, P., Durlauf, S.N. (Eds.), _Handbook of Economic Growth_. Elsevier, pp. 473–552. 
 
 \* Gollin, Douglas, David Lagakos, and Michael E. Waugh. 2013. “The Agricultural Productivity Gap.” _The Quarterly Journal of Economics_ 129 (2): 939–993. (link)  
@@ -29,6 +35,8 @@
 
 
 ### Structural transformation
+
+Notebooks: [Specific Factors](../notebooks/SFM.ipynb), [Structural Transformation](../notebooks/StructuralT1.ipynb), [Harris-Todaro](../notebooks/HarrisTodaro.ipynb)
 
 \* Matsuyama, K., 2008. Structural change. The new _Palgrave dictionary of economics_ 2. [link]
 
@@ -47,6 +55,9 @@ Lewis, W Arthur. "Unlimited Supplies of Labour." Manchester School  (1954).
 
 ### Institutions, Property Rights and Production Organization
 
+Notebooks: [Coase](../notebooks/Coase.ipynb), [Farm Household Models](../notebooks/FarmHousehold.ipynb)
+
+
 \* North, Douglass. 1990. “An Introduction…” chapter 1 in Institutions, Institutional Change, and Economic Performance. Cambridge; New York: Cambridge University Press. [link] 
 
 \* Binswanger, H.P., K. Deininger, and G. Feder. "Power, Distortions, Revolt and Reform in Agricultural Land Relations." Handbook of development economics 3 (1995): 2659-2772. [link] (read to p2682)
@@ -58,13 +69,11 @@ Bardhan, Pranab. 1989. “Alternative Approaches to the Theory of Institutions i
 Acemoglu, D., 2003. Why not a political Coase theorem? Social conflict, commitment, and politics. Journal of comparative economics 31, 620–652.
 Alesina, A., Rodrik, D., 1994. Distributive Politics and Economic Growth. QJE 109, 465–490.
 
-Problem Set:  https://drive.google.com/file/d/1e8UakWGxnUAnYUkdXTX5SabJjztkdkxE/view?usp=sharing
-
 
 
 ### Persistence
 
-Dell SLides: https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing
+Notebooks: [RD designs](../notebooks/RDD_R.ipynb),  [Dell Mita study](https://drive.google.com/file/d/19guksdMR5e7Kt6WUYWo2piD_fCiN3E77/view?usp=sharing).  Problem Set: [Farm Household Models](https://drive.google.com/file/d/1e8UakWGxnUAnYUkdXTX5SabJjztkdkxE/view?usp=sharing)
 
 \* Dell, Melissa 2010. "The Persistent Effects of Peru's Mining Mita." Econometrica 78, no. 6 1863-903 [link]
  
