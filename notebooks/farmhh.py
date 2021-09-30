@@ -50,7 +50,7 @@ def HH(Tbar,Lbar,alpha=ALPHA, beta=BETA):
 
 ## Farm optima (analytic solutions)
 
-def farm_optimum(Tbar, w, alpha=ALPHA, beta=BETA):
+def farm_optimum(Tbar, w, alpha=ALPHA):
     """returns optimal labor demand and profits"""
     LD = Tbar * ((1-alpha)/w)**(1/alpha)
     profit = F(Tbar, LD) - w*LD
@@ -61,6 +61,7 @@ def HH_optimum(Tbar, Lbar, w, alpha=ALPHA, beta=BETA):
        Simple Cobb-Douglas choices from calculated income """
     _, profits = farm_optimum(Tbar, w, alpha)  
     income = profits + w*Lbar
+    print(profits, income)
     consumption = beta * income
     leisure = (1-beta) * income/w
     utility = U(consumption, leisure, beta)

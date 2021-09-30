@@ -24,6 +24,8 @@ parts:
 - caption: Econ 842 Materials
   chapters:
    - file: course/classf21
+     sections: 
+     - file: notebooks/FarmHH_pset
 
 
 - caption: Tools
