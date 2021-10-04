@@ -87,3 +87,27 @@ Nunn, N., Qian, N., 2011. The potato’s contribution to population and urbaniza
 
 Abad, Leticia Arroyo, and Noel Maurer. 2019. “The Long Shadow of History? The Impact of Colonial Labor Institutions on Economic Development in Peru.” manuscript,  LINK
 
+### Property Rights and their Transformation
+
+\* Baker, M.J. and Jonathan Conning (2021) [A Model of Enclosures: Efficiency, Coordination, and Conflict in the Transformation of Land Ownership](https://drive.google.com/file/d/1yhsnk94RIJL5HRMQLJy5nqQD-rApiVzw/view?usp=sharing), manuscript.
+
+\* Goldstein, M., Udry, C., 2008. [The Profits of Power: Land Rights and Agricultural Investment in Ghana](https://www.journals.uchicago.edu/doi/full/10.1086/595561?casa_token=TUHsqwDGot4AAAAA:OXKDpVbmTDp2qMpwB9gSocuzYKKkGeRpF1KmuaMKyUfD0NfhKqwHl71kw_sOcUTRRKq8PGHwig). _Journal of Political Economy_ 116, 981–1022.
+
+Holden, Stein, Keijiro Otsuka, and Klaus Deininger. 2013. "Issues and Theoretical Framework,"  Chapter 1 in Land Tenure Reform in Asia and Africa: Assessing Impacts on Poverty and Natural Resource Management. Springer. Read only pages 3-19.
+ 
+Chen, C., 2017. Untitled Land, Occupational Choice, and Agricultural Productivity. American Economic Journal: Macroeconomics 9, 91–121. 
+
+De Janvry, A, K. Emerick, MG Gonzalez-Navarro, and E Sadoulet. 2015. “Delinking Land Rights from Land Use: Certification and Migration in Mexico.” The American Economic Review 105 (10): 3125–3149.
+
+Platteau, J.-P., 1996. The evolutionary theory of land rights as applied to sub-Saharan Africa: a critical assessment. Development and change 27, 29–86.
+
+Banerjee, Abhijit V., Paul J. Gertler, and Maitreesh Ghatak. "Empowerment and Efficiency: Tenancy Reform in West Bengal." Journal of Political Economy 110, no. 2 (2002): 239-80.
+
+Allen, R.C., 1992. “Introduction: Agrarian Fundamentalism and English Agricultural Development,” Chapter 1 in Enclosure and the yeoman: the agricultural development of the South Midlands 1450-1850. Oxford University Press. [link]
+
+de Meza, D., and J.R. Gould. "The Social Efficiency of Private Decisions to Enforce Property Rights." Journal of Political Economy 100 (1992): 561-80.
+
+Weitzman, M.L., 1974. Free access vs private ownership as alternative systems for managing common property. Journal of Economic Theory 8, 225–234. 
+
+
+
