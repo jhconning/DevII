@@ -89,6 +89,9 @@ Abad, Leticia Arroyo, and Noel Maurer. 2019. “The Long Shadow of History? The 
 
 ### Property Rights and their Transformation
 
+Notebooks: [Enclosure model]([https://jhconning.github.io/enclosure_book/content.html) (external site), 
+
+
 \* Baker, M.J. and Jonathan Conning (2021) [A Model of Enclosures: Efficiency, Coordination, and Conflict in the Transformation of Land Ownership](https://drive.google.com/file/d/1yhsnk94RIJL5HRMQLJy5nqQD-rApiVzw/view?usp=sharing), manuscript.
 
 \* Goldstein, M., Udry, C., 2008. [The Profits of Power: Land Rights and Agricultural Investment in Ghana](https://www.journals.uchicago.edu/doi/full/10.1086/595561?casa_token=TUHsqwDGot4AAAAA:OXKDpVbmTDp2qMpwB9gSocuzYKKkGeRpF1KmuaMKyUfD0NfhKqwHl71kw_sOcUTRRKq8PGHwig). _Journal of Political Economy_ 116, 981–1022.
