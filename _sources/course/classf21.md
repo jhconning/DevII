@@ -89,8 +89,7 @@ Abad, Leticia Arroyo, and Noel Maurer. 2019. “The Long Shadow of History? The 
 
 ### Property Rights and their Transformation
 
-Notebooks: [Enclosure model]([https://jhconning.github.io/enclosure_book/content.html) (external site), 
-
+Notebooks: [Enclosure model](https://jhconning.github.io/enclosure_book/content.html) (external site), 
 
 \* Baker, M.J. and Jonathan Conning (2021) [A Model of Enclosures: Efficiency, Coordination, and Conflict in the Transformation of Land Ownership](https://drive.google.com/file/d/1yhsnk94RIJL5HRMQLJy5nqQD-rApiVzw/view?usp=sharing), manuscript.
 
