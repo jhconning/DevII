@@ -104,13 +104,14 @@ De Janvry, A, K. Emerick, MG Gonzalez-Navarro, and E Sadoulet. 2015. “Delinkin
 
 Platteau, J.-P., 1996. The evolutionary theory of land rights as applied to sub-Saharan Africa: a critical assessment. Development and change 27, 29–86.
 
-Banerjee, Abhijit V., Paul J. Gertler, and Maitreesh Ghatak. "Empowerment and Efficiency: Tenancy Reform in West Bengal." Journal of Political Economy 110, no. 2 (2002): 239-80.
-
-Allen, R.C., 1992. “Introduction: Agrarian Fundamentalism and English Agricultural Development,” Chapter 1 in Enclosure and the yeoman: the agricultural development of the South Midlands 1450-1850. Oxford University Press. [link]
+Allen, R.C., 1992. “Introduction: Agrarian Fundamentalism and English Agricultural Development,” Chapter 1 in Enclosure and the yeoman: the agricultural development of the South Midlands 1450-1850. Oxford University Press. [link]()
 
 de Meza, D., and J.R. Gould. "The Social Efficiency of Private Decisions to Enforce Property Rights." Journal of Political Economy 100 (1992): 561-80.
 
 Weitzman, M.L., 1974. Free access vs private ownership as alternative systems for managing common property. Journal of Economic Theory 8, 225–234. 
 
 
+### Misallocation
+
+\* Hsieh, C.-T., Klenow, P.J., 2009. Misallocation and Manufacturing TFP in China and India. Q J Econ 124, 1403–1448. [link](http://klenow.com/HsiehKlenow_LifeCycle.pdf)
 
