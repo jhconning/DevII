@@ -104,7 +104,7 @@ De Janvry, A, K. Emerick, MG Gonzalez-Navarro, and E Sadoulet. 2015. “Delinkin
 
 Platteau, J.-P., 1996. The evolutionary theory of land rights as applied to sub-Saharan Africa: a critical assessment. Development and change 27, 29–86.
 
-Allen, R.C., 1992. “Introduction: Agrarian Fundamentalism and English Agricultural Development,” Chapter 1 in Enclosure and the yeoman: the agricultural development of the South Midlands 1450-1850. Oxford University Press. [link]()
+Allen, R.C., 1992. “Introduction: Agrarian Fundamentalism and English Agricultural Development,” Chapter 1 in Enclosure and the yeoman: the agricultural development of the South Midlands 1450-1850. Oxford University Press. [link](https://drive.google.com/file/d/1CcTIQD2uFwZ7cz8dwYHZj_56S6EdaKsY/view?usp=sharing)
 
 de Meza, D., and J.R. Gould. "The Social Efficiency of Private Decisions to Enforce Property Rights." Journal of Political Economy 100 (1992): 561-80.
 
@@ -112,6 +112,9 @@ Weitzman, M.L., 1974. Free access vs private ownership as alternative systems fo
 
 
 ### Misallocation
+
+[slides on Misallocation](https://drive.google.com/file/d/10cdCPZjp8iNeEvtniiT4WdT1gDacR7bT/view?usp=sharing)
+[enclosure model](https://drive.google.com/file/d/1GIMx53evmGjU17xgbmvskk6acBDvXgR7/view?usp=sharing) 
 
 \* Hsieh, C.-T., Klenow, P.J., 2009. Misallocation and Manufacturing TFP in China and India. Q J Econ 124, 1403–1448. [link](http://klenow.com/HsiehKlenow_LifeCycle.pdf)
 
