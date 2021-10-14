@@ -111,10 +111,17 @@ de Meza, D., and J.R. Gould. "The Social Efficiency of Private Decisions to Enfo
 Weitzman, M.L., 1974. Free access vs private ownership as alternative systems for managing common property. Journal of Economic Theory 8, 225–234. 
 
 
-### Misallocation
+### Misallocation Studies
 
 [slides on Misallocation](https://drive.google.com/file/d/10cdCPZjp8iNeEvtniiT4WdT1gDacR7bT/view?usp=sharing)
 [enclosure model](https://drive.google.com/file/d/1GIMx53evmGjU17xgbmvskk6acBDvXgR7/view?usp=sharing) 
 
+[HK reaction paper](https://drive.google.com/file/d/10pdarEP52S8lvZawFqAQH56PfTfPRZqb/view?usp=sharing) by Swapnil and Victor
+
 \* Hsieh, C.-T., Klenow, P.J., 2009. Misallocation and Manufacturing TFP in China and India. Q J Econ 124, 1403–1448. [link](http://klenow.com/HsiehKlenow_LifeCycle.pdf)
 
+We will also finish: 
+
+\* Baker, M.J. and Jonathan Conning (2021) [A Model of Enclosures: Efficiency, Coordination, and Conflict in the Transformation of Land Ownership](https://drive.google.com/file/d/1yhsnk94RIJL5HRMQLJy5nqQD-rApiVzw/view?usp=sharing), manuscript.
+
+\* Goldstein, M., Udry, C., 2008. [The Profits of Power: Land Rights and Agricultural Investment in Ghana](https://www.journals.uchicago.edu/doi/full/10.1086/595561?casa_token=TUHsqwDGot4AAAAA:OXKDpVbmTDp2qMpwB9gSocuzYKKkGeRpF1KmuaMKyUfD0NfhKqwHl71kw_sOcUTRRKq8PGHwig). _Journal of Political Economy_ 116, 981–1022.
