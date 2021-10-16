@@ -118,10 +118,16 @@ Weitzman, M.L., 1974. Free access vs private ownership as alternative systems fo
 
 [HK reaction paper](https://drive.google.com/file/d/10pdarEP52S8lvZawFqAQH56PfTfPRZqb/view?usp=sharing) by Swapnil and Victor
 
-\* Hsieh, C.-T., Klenow, P.J., 2009. Misallocation and Manufacturing TFP in China and India. Q J Econ 124, 1403–1448. [link](http://klenow.com/HsiehKlenow_LifeCycle.pdf)
+\* Hsieh, C.-T., Klenow, P.J., 2009. Misallocation and Manufacturing TFP in China and India. _Quarterly Journal of Economics_ 124, 1403–1448. [link](http://klenow.com/HsiehKlenow_LifeCycle.pdf)
 
 We will also finish: 
 
 \* Baker, M.J. and Jonathan Conning (2021) [A Model of Enclosures: Efficiency, Coordination, and Conflict in the Transformation of Land Ownership](https://drive.google.com/file/d/1yhsnk94RIJL5HRMQLJy5nqQD-rApiVzw/view?usp=sharing), manuscript.
 
 \* Goldstein, M., Udry, C., 2008. [The Profits of Power: Land Rights and Agricultural Investment in Ghana](https://www.journals.uchicago.edu/doi/full/10.1086/595561?casa_token=TUHsqwDGot4AAAAA:OXKDpVbmTDp2qMpwB9gSocuzYKKkGeRpF1KmuaMKyUfD0NfhKqwHl71kw_sOcUTRRKq8PGHwig). _Journal of Political Economy_ 116, 981–1022.
+
+### Financial contracting and intermediation, and household coping strategies
+
+\* Conning, J., Udry, C., 2007. Rural Financial Markets in Developing Countries, in Evenson, R.E., et al (eds.), _Handbook of Agricultural Economics_, Vol. 3, Elsevier, North-Holland, pp. 2857–2908. [[link](https://drive.google.com/file/d/1Mw31p2Bm3zKT-wOlOgu9ep1SRDFB_B97/view?usp=sharing)]
+
+\* Banerjee, A, E. Duflo, R. Glennerster, and C. Kinnan (2015) The Miracle of Microfinance? Evidence from a Randomized Evaluation, _American Economic Journal: Applied Economics_, 7(1), pp. 22-53 [[link](https://www.aeaweb.org/articles?id=10.1257%2Fapp.20130533&source=post_page)], [[data](https://www.openicpsr.org/openicpsr/project/113599/version/V1/view;jsessionid=DC6CE840C07BA1EC354BFBF320103E88)]
