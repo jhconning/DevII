@@ -24,6 +24,7 @@ parts:
 
    - file: notebooks/financial
      sections:
+     - file: notebooks/consume_opt1
      - file: notebooks/Village_sharing
 
 - caption: Econ 842 Materials
