@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # Risk Sharing
 
 ### The Planner's Problem
@@ -66,19 +70,19 @@ Consumption sharing rule for log utility and pareto weights proportional to hous
 
 #### Independent shocks
 
-![vshare0](media/vshare0.png)---
+![vshare0](../media/vshare0.png)---
 
 ---
 
 #### Positively correlated shocks
 
-![vshare80](media/vshare80.png)
+![vshare80](../media/vshare80.png)
 
 ---
 
 #### Negatively correlated shocks
 
-![vshare-20](media/vshare-20.png)
+![vshare-20](../media/vshare-20.png)
 
 ---
 
@@ -115,7 +119,7 @@ Six studies published in [special issue](https://www.aeaweb.org/issues/360) of A
 
 ---
 
-![mfrcts](media/mfrcts.jpg)[source](https://www.cgdev.org/blog/final-word-microcredit)
+![mfrcts](../media/mfrcts.jpg), [source](https://www.cgdev.org/blog/final-word-microcredit)
 ---
 
 ---

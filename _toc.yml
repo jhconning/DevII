@@ -22,6 +22,9 @@ parts:
      - file: notebooks/RDD_R.ipynb
        title: RD designs (in R)
 
+   - file: notebooks/financial
+     sections:
+     - file: notebooks/Village_sharing
 
 - caption: Econ 842 Materials
   chapters:
