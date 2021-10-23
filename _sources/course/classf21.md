@@ -131,3 +131,18 @@ We will also finish:
 \* Conning, J., Udry, C., 2007. Rural Financial Markets in Developing Countries, in Evenson, R.E., et al (eds.), _Handbook of Agricultural Economics_, Vol. 3, Elsevier, North-Holland, pp. 2857–2908. [[link](https://drive.google.com/file/d/1Mw31p2Bm3zKT-wOlOgu9ep1SRDFB_B97/view?usp=sharing)]
 
 \* Banerjee, A, E. Duflo, R. Glennerster, and C. Kinnan (2015) The Miracle of Microfinance? Evidence from a Randomized Evaluation, _American Economic Journal: Applied Economics_, 7(1), pp. 22-53 [[link](https://www.aeaweb.org/articles?id=10.1257%2Fapp.20130533&source=post_page)], [[data](https://www.openicpsr.org/openicpsr/project/113599/version/V1/view;jsessionid=DC6CE840C07BA1EC354BFBF320103E88)]
+
+### Incentives, Targeting, and Decentralization
+
+\* Faguet, J.-P., (2014). "Decentralization and governance." _World Development_ 53, 2–13.
+
+\* Mansuri, G., Rao, V., 2004. Community-based and-driven development: A critical review. The World Bank Research Observer 19, 1–39.
+
+- Galasso, E., Ravallion, M., 2005. Decentralized targeting of an antipoverty program. Journal of Public economics 89, 705–727.
+
+- Bardhan, P., 2002. Decentralization of governance and development. Journal of Economic perspectives 16, 185–205.
+
+- Olken, Ben. (2007). “Monitoring Corruption: Evidence from a Field Experiment in
+Indonesia”, Journal of Political Economy, 115(2), 200-249.
+
+
