@@ -132,17 +132,20 @@ We will also finish:
 
 \* Banerjee, A, E. Duflo, R. Glennerster, and C. Kinnan (2015) The Miracle of Microfinance? Evidence from a Randomized Evaluation, _American Economic Journal: Applied Economics_, 7(1), pp. 22-53 [[link](https://www.aeaweb.org/articles?id=10.1257%2Fapp.20130533&source=post_page)], [[data](https://www.openicpsr.org/openicpsr/project/113599/version/V1/view;jsessionid=DC6CE840C07BA1EC354BFBF320103E88)]
 
-### Incentives, Targeting, and Decentralization
+### Targeting, Decentralization, and Incentives
 
 \* Faguet, J.-P., (2014). "Decentralization and governance." _World Development_ 53, 2–13.
 
-\* Mansuri, G., Rao, V., 2004. Community-based and-driven development: A critical review. The World Bank Research Observer 19, 1–39.
+\* Mansuri, G., Rao, V., 2004. Community-based and-driven development: A critical review. _The World Bank Research Observer_ 19, 1–39.
 
-- Galasso, E., Ravallion, M., 2005. Decentralized targeting of an antipoverty program. Journal of Public economics 89, 705–727.
+\- Galasso, E., Ravallion, M., 2005. Decentralized targeting of an antipoverty program. _Journal of Public Economics_ 89, 705–727.
 
-- Bardhan, P., 2002. Decentralization of governance and development. Journal of Economic perspectives 16, 185–205.
+\- Bardhan, P., 2002. Decentralization of governance and development. _Journal of Economic Perspectives_ 16, 185–205.
 
-- Olken, Ben. (2007). “Monitoring Corruption: Evidence from a Field Experiment in
-Indonesia”, Journal of Political Economy, 115(2), 200-249.
+\- Olken, Ben. (2007). “Monitoring Corruption: Evidence from a Field Experiment in
+Indonesia”, _Journal of Political Economy_, 115(2), 200-249.
+
+\- Conning, J., Kevane, M., 2002. Community-based targeting mechanisms for social safety nets: A critical review. _World development_ 30, 375–394.
+
 
 
