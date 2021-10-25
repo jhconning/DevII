@@ -19,19 +19,17 @@ parts:
      - file: notebooks/FarmHousehold
      - url: https://jhconning.github.io/enclosure_book/content.html
        title: A Model of Land Enclosures
-     - file: notebooks/RDD_R.ipynb
-       title: RD designs (in R)
 
    - file: notebooks/financial
      sections:
      - file: notebooks/consume_opt1
      - file: notebooks/Village_sharing
 
-- caption: Empirical + Geospatial
-  chapters:
-   - file: notebooks/Fenske.ipynb
-     
-
+   - file: notebooks/empirical
+     sections:
+     - file: notebooks/Fenske.ipynb   
+     - file: notebooks/RDD_R.ipynb
+       title: RD designs (in R)
 
 - caption: Econ 842 Materials
   chapters:
