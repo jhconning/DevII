@@ -27,6 +27,12 @@ parts:
      - file: notebooks/consume_opt1
      - file: notebooks/Village_sharing
 
+- caption: Empirical + Geospatial
+  chapters:
+   - file: notebooks/Fenske.ipynb
+     
+
+
 - caption: Econ 842 Materials
   chapters:
    - file: course/classf21
