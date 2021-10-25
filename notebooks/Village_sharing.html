@@ -400,6 +400,25 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-for-consumption-smoothing">
+   Testing for Consumption Smoothing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-planner-s-problem">
+     The Planner’s Problem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#crra-example">
+       CRRA Example:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -414,7 +433,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="village-consumption-smoothing">
 <h1>Village consumption smoothing<a class="headerlink" href="#village-consumption-smoothing" title="Permalink to this headline">¶</a></h1>
 <p>A simple simulation of a village sharing economy.  We simulate <span class="math notranslate nohighlight">\(T\)</span> periods of income for <span class="math notranslate nohighlight">\(N\)</span> individuals.  Each individual receives a base level of income plus an stochastic income component.  The income shocks can be independent or correlated.</p>
-<p>We plot income in each household with and without consumption smoothing.</p>
+<p>We plot income in each household with and without consumption smoothing. Further below we relate this simulation to empirical investigations of consumption smoothing in Nigeria by Udry (1994) and Townsend (1994).</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -531,6 +550,59 @@
 <div class="cell_output docutils container">
 <img alt="../_images/Village_sharing_13_0.png" src="../_images/Village_sharing_13_0.png" />
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-for-consumption-smoothing">
+<h2>Testing for Consumption Smoothing<a class="headerlink" href="#testing-for-consumption-smoothing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-planner-s-problem">
+<h3>The Planner’s Problem<a class="headerlink" href="#the-planner-s-problem" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\max_{c_{it}(s^t)} \sum_{i} \lambda_i \sum_{t=1}^{\infty}\sum_{s^t} \delta^t \pi(s^t)u_i(c_{it}(s^t))
+\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda_{i}\)</span> are Pareto weights of household <span class="math notranslate nohighlight">\(i\)</span> in the social planners objective</p>
+<p><span class="math notranslate nohighlight">\(\pi(s^t)\)</span> is the probability of history <span class="math notranslate nohighlight">\(s^t\)</span> occurring
+$<span class="math notranslate nohighlight">\(
+\sum\limits_i {c_{it} (s^t)} \le \sum\limits_i {y_{it} (s_t),} \,\,\,\,\,\forall s^t,\forall t,
+\)</span>$</p>
+<p>Let’s simplify to a single period. For any two individuals  <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(\upsilon\)</span> an efficient allocation requires:
+$<span class="math notranslate nohighlight">\(
+{\lambda_\upsilon \cdot u^{\prime}_\upsilon (c_{\upsilon s} )}={\lambda_i \cdot u^{\prime}_i (c_{is})},\,\,\,\,\forall s
+\)</span>$
+In words, the weighted marginal utilities of consumption are equalized across individuals in every state.</p>
+<div class="section" id="crra-example">
+<h4>CRRA Example:<a class="headerlink" href="#crra-example" title="Permalink to this headline">¶</a></h4>
+<p>Let’s assume utility of CRRA form: <span class="math notranslate nohighlight">\(u(c_{is})=ln(c_{is})\)</span></p>
+<p>Stochastic income is generated as: <span class="math notranslate nohighlight">\(y_{is}= \bar y_i +\mu_{is}\)</span>    with  <span class="math notranslate nohighlight">\(\mu_{is} \sim \mathcal{N}(0,\Sigma)\)</span></p>
+<p>Let’s also assume Pareto welfare weights proportional to person’s share of expected income:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_i =\frac{\bar y_i}{\bar Y} \ \ \ \text{   where } \ \ \ \bar Y = \sum \bar y_j
+\]</div>
+<p>Efficient consumption pooling insures individual against idiosyncratic shocks, but not aggregate shocks.</p>
+<div class="math notranslate nohighlight">
+\[
+c_{is}=\lambda_i \cdot  Y_s
+\]</div>
+<p><strong>Efficient consumption smoothing test:</strong> own consumption should depend on aggregate village income and on not idiosyncratic income.  Same result holds for other utility functions.</p>
+<p>That means that if we run a FE regression of consumption on own and village aggregate income:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{is}=\beta_0 + \beta_1 y_{is} + \beta_2  \cdot  Y_s + e_{i} + \epsilon_{is}
+\]</div>
+<p>Under consumption smoothing, we should expect <span class="math notranslate nohighlight">\(\beta_1=0\)</span> and <span class="math notranslate nohighlight">\(\beta_2 &gt;0\)</span></p>
+<p>Two important papers that employ this approach are:</p>
+<blockquote>
+<div><p>Udry, C., 1994. Risk and insurance in a rural credit market: An empirical investigation in northern Nigeria. <em>The Review of Economic Studies</em> 61, 495–526.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Townsend, R.M., 1994. Risk and Insurance in Village India. <em>Econometrica</em> 62, 539–91.</p>
+</div></blockquote>
+<p>The figure below, taken from Townsend (1994) shows the comovement of household incomes (as a deviation from village average) for ten households in the Indian village of Aurepalle.  Similar to the simulated data above, we can observe that households are exposed to significant ideosyncratic income shocks.</p>
+<p><img alt="incomecomovement" src="media/Townsend_risk2.png" /></p>
+<p>Households in this village do however appear to be able to smooth consumption streams considerably, via some combination of own saving/dissaving, financial contracting with other households and other means. The next figure shows the comovement of household consumptions (focused on grain only)</p>
+<p><img alt="" src="../_images/Townsend_risk3.png" /></p>
 </div>
 </div>
 </div>
