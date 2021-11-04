@@ -145,7 +145,7 @@ We will also finish:
 
 ### Targeting, Capture, and Corruption
 
-[slides on GR2005](https://drive.google.com/file/d/11jqTBMRtmZXVTsdSHT-5WJZbqob-0TIV/view?usp=sharing)
+[slides on GR05](https://drive.google.com/file/d/11jqTBMRtmZXVTsdSHT-5WJZbqob-0TIV/view?usp=sharing)
 
 
 \* Galasso, E., Ravallion, M., 2005. Decentralized targeting of an antipoverty program. Journal of Public Economics 89, 705–727.
