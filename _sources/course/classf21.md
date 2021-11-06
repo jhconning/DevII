@@ -161,7 +161,7 @@ Indonesia”, _Journal of Political Economy_, 115(2), 200-249.
 
 
 
-## IntraHousehold Decisionmaking and Allocations (11/11)
+### IntraHousehold Decisionmaking and Allocations (11/11)
 
 \* Chiappori, P.-A., Mazzocco, M., 2017. Static and Intertemporal Household Decisions. Journal of Economic Literature 55, 985–1045. (focus on static models section)  
 
@@ -172,7 +172,7 @@ Indonesia”, _Journal of Political Economy_, 115(2), 200-249.
 Haddad, L., Hoddinott, J., Alderman, H., 1997. _Intrahousehold resource allocation in developing countries: Models, Methods and Policies. John Hopkins University Press and International Food Policy Research Institute. (link)  [optional additional reference]
 
 
-## Health, Nutrition, Gender and Empowerment (11/18)
+### Health, Nutrition, Gender and Empowerment (11/18)
 
 \* Chattopadhyay, Raghabendra, and Esther Duflo. 2004. “Women as Policy Makers: Evidence from a Randomized Policy Experiment in India.” _Econometrica_ 72 (5): 1409–43.
 
