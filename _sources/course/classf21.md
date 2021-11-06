@@ -160,3 +160,24 @@ Indonesia”, _Journal of Political Economy_, 115(2), 200-249.
 \- Bardhan, P.K., Mookherjee, D., 2000. Capture and governance at local and national levels. American economic review 90, 135–139.
 
 
+
+## IntraHousehold Decisionmaking and Allocations (11/11)
+
+\* Chiappori, P.-A., Mazzocco, M., 2017. Static and Intertemporal Household Decisions. Journal of Economic Literature 55, 985–1045. (focus on static models section)  
+
+\* Strauss, J., Mwabu, G., Beegle, K., 2000. Intrahousehold allocations: a review of theories and empirical evidence. Journal of African Economies 9, 83–143. (link)
+
+\* Thomas, Duncan  (1990),  “Intra-household resource allocation:  An Inferential Approach,”  Journal of  Human Resources  25:  635-664. [old but classic]
+
+Haddad, L., Hoddinott, J., Alderman, H., 1997. _Intrahousehold resource allocation in developing countries: Models, Methods and Policies. John Hopkins University Press and International Food Policy Research Institute. (link)  [optional additional reference]
+
+
+## Health, Nutrition, Gender and Empowerment (11/18)
+
+\* Chattopadhyay, Raghabendra, and Esther Duflo. 2004. “Women as Policy Makers: Evidence from a Randomized Policy Experiment in India.” _Econometrica_ 72 (5): 1409–43.
+
+\* Deaton, Angus, and Jean Drèze. 2009. “Food and Nutrition in India: Facts and Interpretations.” _Economic and Political Weekly_, 42–65.
+
+\* Jayachandran, S., Pande, R., 2017. Why are Indian children so short? The role of birth order and son preference. _American Economic Review_ 107, 2600–2629.
+
+Aiyar, Anaka, and Joseph R. Cummins. 2021. “An Age Profile Perspective on Two Puzzles in Global Child Health: The Indian Enigma & Economic Growth.” _Journal of Development Economics_ 148 (January):
