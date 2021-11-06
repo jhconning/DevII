@@ -161,7 +161,7 @@ Indonesia”, _Journal of Political Economy_, 115(2), 200-249.
 
 
 
-### IntraHousehold Decisionmaking and Allocations (11/11)
+### Intrahousehold Resource Allocations (11/11)
 
 \* Chiappori, P.-A., Mazzocco, M., 2017. Static and Intertemporal Household Decisions. Journal of Economic Literature 55, 985–1045. (focus on static models section)  
 
