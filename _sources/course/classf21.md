@@ -174,10 +174,11 @@ Haddad, L., Hoddinott, J., Alderman, H., 1997. _Intrahousehold resource allocati
 
 ### Health, Nutrition, Gender and Empowerment (11/18)
 
-\* Chattopadhyay, Raghabendra, and Esther Duflo. 2004. “Women as Policy Makers: Evidence from a Randomized Policy Experiment in India.” _Econometrica_ 72 (5): 1409–43.
 
-\* Deaton, Angus, and Jean Drèze. 2009. “Food and Nutrition in India: Facts and Interpretations.” _Economic and Political Weekly_, 42–65.
+\* Chattopadhyay, Raghabendra, and Esther Duflo. 2004. “Women as Policy Makers: Evidence from a Randomized Policy Experiment in India.” _Econometrica_ 72 (5): 1409–43. [[link](https://ezproxy.gc.cuny.edu/login?&url=https://www.jstor.org/openurl?sid=primo&au=Chattopadhyay%2C+Raghabendra&volume=72&date=2004&spage=1409&issn=00129682&issue=5)]
 
-\* Jayachandran, S., Pande, R., 2017. Why are Indian children so short? The role of birth order and son preference. _American Economic Review_ 107, 2600–2629.
+\* Deaton, Angus, and Jean Drèze. 2009. “Food and Nutrition in India: Facts and Interpretations.” _Economic and Political Weekly_, 42–65.  [[link](https://drive.google.com/file/d/12IO1hNnGi3ZaVf_hb71KhQdculo-ZXo4/view?usp=sharing)]
 
-Aiyar, Anaka, and Joseph R. Cummins. 2021. “An Age Profile Perspective on Two Puzzles in Global Child Health: The Indian Enigma & Economic Growth.” _Journal of Development Economics_ 148 (January):
+\* Jayachandran, S., Pande, R., 2017. Why are Indian children so short? The role of birth order and son preference. _American Economic Review_ 107, 2600–2629.  [[link](https://drive.google.com/file/d/12UIpOvSo5Lem0AP3yDZ2aIzGUIKRcLx8/view?usp=sharing)]
+
+(optional) Aiyar, Anaka, and Joseph R. Cummins. 2021. “An Age Profile Perspective on Two Puzzles in Global Child Health: The Indian Enigma & Economic Growth.” _Journal of Development Economics_ 148 
