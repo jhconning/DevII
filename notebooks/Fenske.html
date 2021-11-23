@@ -516,7 +516,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2e891eec287f4358bd4fbc51fea56506", "version_major": 2, "version_minor": 0}
+{"model_id": "7a738834d2844d7897d1d66bae325df5", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>We will load the dataframe into an ipyleaflet GeoData object that we will then add as a layer to the map.</p>
@@ -587,15 +587,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Volume in drive C is Windows
- Volume Serial Number is A040-41A7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Volume in drive H is Google Drive
+ Volume Serial Number is 1983-1116
 
- Directory of C:\Users\jconn\Google Drive\GC\land\land_uct_2019\notebooks
+ Directory of H:\My Drive\code\GitHub\DevII\notebooks
 
-02/13/18  04:45 PM         3,729,147 res02_crav6190h_whea000a_yld.tif
-06/20/21  10:52 PM         1,873,865 sxHr_rcd.tif
-               2 File(s)      5,603,012 bytes
-               0 Dir(s)  153,754,439,680 bytes free
+11/23/2021  02:59 PM         1,873,865 sxHr_rcd.tif
+               1 File(s)      1,873,865 bytes
+               0 Dir(s)  35,335,467,008 bytes free
 </pre></div>
 </div>
 </div>
@@ -619,7 +618,7 @@
 <p>Next we use the <code class="docutils literal notranslate"><span class="pre">rasterstats.zonal_stats</span></code> command to calculate ‘count’, ‘max’, ‘min’, ‘mean’ statistics for the raster data inside each polygon. The function returns the results as a python dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">zonal_stats</span><span class="p">(</span><span class="s1">&#39;borders_tribes.shp&#39;</span><span class="p">,</span> <span class="n">wheat_tif</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;wheat_&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">zonal_stats</span><span class="p">(</span><span class="s1">&#39;zip://borders_tribes.zip/borders_tribes.shp&#39;</span><span class="p">,</span> <span class="n">wheat_tif</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;wheat_&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -633,7 +632,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;wheat_min&#39;, &#39;wheat_max&#39;, &#39;wheat_mean&#39;, &#39;wheat_count&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;wheat_count&#39;, &#39;wheat_max&#39;, &#39;wheat_mean&#39;, &#39;wheat_min&#39;]
 </pre></div>
 </div>
 </div>
@@ -669,10 +668,10 @@
       <th>LAT</th>
       <th>LON</th>
       <th>geometry</th>
-      <th>wheat_min</th>
+      <th>wheat_count</th>
       <th>wheat_max</th>
       <th>wheat_mean</th>
-      <th>wheat_count</th>
+      <th>wheat_min</th>
     </tr>
   </thead>
   <tbody>
@@ -683,10 +682,10 @@
       <td>23.161800</td>
       <td>33.70160</td>
       <td>POLYGON ((35.73971 22.87611, 35.54412 22.64326...</td>
-      <td>0.0</td>
+      <td>1988</td>
       <td>0.0</td>
       <td>0.000000</td>
-      <td>1988</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -695,10 +694,10 @@
       <td>3.702955</td>
       <td>26.79730</td>
       <td>POLYGON ((26.45080 3.39284, 26.45227 3.39798, ...</td>
-      <td>6483.0</td>
+      <td>82</td>
       <td>9999.0</td>
       <td>8315.512195</td>
-      <td>82</td>
+      <td>6483.0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -707,10 +706,10 @@
       <td>6.069531</td>
       <td>-4.26032</td>
       <td>POLYGON ((-4.07477 6.37522, -4.01895 6.26358, ...</td>
-      <td>6956.0</td>
+      <td>48</td>
       <td>8477.0</td>
       <td>7587.083333</td>
-      <td>48</td>
+      <td>6956.0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -719,10 +718,10 @@
       <td>3.108121</td>
       <td>32.65680</td>
       <td>POLYGON ((33.25900 3.88539, 33.45547 3.86574, ...</td>
-      <td>1685.0</td>
+      <td>319</td>
       <td>10000.0</td>
       <td>7352.517241</td>
-      <td>319</td>
+      <td>1685.0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -731,10 +730,10 @@
       <td>7.556091</td>
       <td>13.18470</td>
       <td>POLYGON ((14.14605 9.96943, 14.14605 9.87880, ...</td>
-      <td>0.0</td>
+      <td>620</td>
       <td>10000.0</td>
       <td>6061.716129</td>
-      <td>620</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
