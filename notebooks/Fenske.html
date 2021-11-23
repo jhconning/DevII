@@ -516,7 +516,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7a738834d2844d7897d1d66bae325df5", "version_major": 2, "version_minor": 0}
+{"model_id": "7673484f5a8b4758be920cc578781b15", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>We will load the dataframe into an ipyleaflet GeoData object that we will then add as a layer to the map.</p>
@@ -543,9 +543,9 @@
 <p>And now a marker for each of the ethnographic regions identified on the map such that when we hover over the icon we see the name of the region.  Since there are hundreds of regions we’ll also use the ‘MarkerCluster’ object so that the map is not overwhelmed with marker icons. When we zoom out we’ll see just a cluster with a number indicating how many markers lie within the cluster.  The individual markers then become visible as we zoom in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">ilf</span><span class="o">.</span><span class="n">MarkerCluster</span><span class="p">(</span>
-                <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="n">ilf</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">LAT</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">LON</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tribe_areas</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()])</span>
-          <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="n">ilf</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">LAT</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">LON</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tribe_areas</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]</span>
+<span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">ilf</span><span class="o">.</span><span class="n">MarkerCluster</span><span class="p">(</span><span class="n">markers</span> <span class="o">=</span> <span class="n">markers</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">marker_cluster</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -592,9 +592,9 @@
 
  Directory of H:\My Drive\code\GitHub\DevII\notebooks
 
-11/23/2021  02:59 PM         1,873,865 sxHr_rcd.tif
+11/23/2021  03:07 PM         1,873,865 sxHr_rcd.tif
                1 File(s)      1,873,865 bytes
-               0 Dir(s)  35,335,467,008 bytes free
+               0 Dir(s)  34,289,737,728 bytes free
 </pre></div>
 </div>
 </div>
@@ -644,100 +644,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>TRIBE_CODE</th>
-      <th>LAT</th>
-      <th>LON</th>
-      <th>geometry</th>
-      <th>wheat_count</th>
-      <th>wheat_max</th>
-      <th>wheat_mean</th>
-      <th>wheat_min</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ABABDA</td>
-      <td>1</td>
-      <td>23.161800</td>
-      <td>33.70160</td>
-      <td>POLYGON ((35.73971 22.87611, 35.54412 22.64326...</td>
-      <td>1988</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ABARAMBO</td>
-      <td>2</td>
-      <td>3.702955</td>
-      <td>26.79730</td>
-      <td>POLYGON ((26.45080 3.39284, 26.45227 3.39798, ...</td>
-      <td>82</td>
-      <td>9999.0</td>
-      <td>8315.512195</td>
-      <td>6483.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ABE</td>
-      <td>3</td>
-      <td>6.069531</td>
-      <td>-4.26032</td>
-      <td>POLYGON ((-4.07477 6.37522, -4.01895 6.26358, ...</td>
-      <td>48</td>
-      <td>8477.0</td>
-      <td>7587.083333</td>
-      <td>6956.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ACHOLI</td>
-      <td>4</td>
-      <td>3.108121</td>
-      <td>32.65680</td>
-      <td>POLYGON ((33.25900 3.88539, 33.45547 3.86574, ...</td>
-      <td>319</td>
-      <td>10000.0</td>
-      <td>7352.517241</td>
-      <td>1685.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ADAMAWA</td>
-      <td>5</td>
-      <td>7.556091</td>
-      <td>13.18470</td>
-      <td>POLYGON ((14.14605 9.96943, 14.14605 9.87880, ...</td>
-      <td>620</td>
-      <td>10000.0</td>
-      <td>6061.716129</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Let’s see a simple chloropeth plot based on mean wheat potential in each ethnic group zone.</p>
 <div class="cell docutils container">
@@ -745,9 +651,6 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tribe_areas</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;wheat_mean&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">));</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/Fenske_29_0.png" src="../_images/Fenske_29_0.png" />
 </div>
 </div>
 </div>
