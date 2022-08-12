@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Farm Household Models &#8212; Dev II - Development Notebooks</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Financial Contracting" href="financial.html" />
@@ -64,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +109,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Dev II - Development Notebooks
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Dev II - Development Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development Topics
  </span>
@@ -270,112 +287,213 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/FarmHousehold.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/jhconning/DevII"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jhconning/DevII/main?urlpath=tree/notebooks/FarmHousehold.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/jhconning/DevII/blob/main/notebooks/FarmHousehold.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jhconning/DevII/main?urlpath=tree/notebooks/FarmHousehold.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jhconning/DevII/blob/main/notebooks/FarmHousehold.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/jhconning/DevII"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/FarmHousehold.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-chayanovian-household">
    The Chayanovian Household
@@ -410,17 +528,67 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Farm Household Models</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-chayanovian-household">
+   The Chayanovian Household
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphical-analysis">
+   Graphical analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inverse-farm-size-productivity-relationship">
+   Inverse farm size productivity relationship
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-separable-farm-household">
+   The Separable Farm Household
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-efficient-competitive-farm">
+     The efficient competitive farm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-inverse-farm-size-productivity-relationship">
+     No Inverse farm size productivity relationship!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="farm-household-models">
-<h1>Farm Household Models<a class="headerlink" href="#farm-household-models" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="farm-household-models">
+<h1>Farm Household Models<a class="headerlink" href="#farm-household-models" title="Permalink to this headline">#</a></h1>
 <p>Economics textbooks typically present the decisions of firms in one set of chapters and the consumption decisions of households in separate chapters.  In this artificial but useful dichotomy the firm organizes production and hires factors of production to maximize profits while households own the factors of production (and ownership shares in firms). Households earn incomes from supplying these factors to firms and use that income to purchase products from the firms. We treat these decisions as ‘separable’.</p>
 <p>Many households are however simultaneously producers and consumers.  They may operate small farms, garden plots, stores or other types of businesses, and at the same time sell or hire labor in the labor market.  In fact a large literature suggests that one defining characteristic of developing countries labor markets is the large fraction of its labor force that are self-employed ‘own account’ workers, many of whom run small businesses alongside wage labor jobs (Gollin, 2008).</p>
 <p>Here we offer stylized representations of the so called ‘farm household model’ or ‘agricultural household model’ (Singh, Squire, Strauss, 1986). In these models the household acts both as a consumption unit, maximizing utility over consumption and ‘leisure’ choices as well as a production unit, deciding how much labor and other factors to allocate to the the household farm or business, and how much to the market.</p>
@@ -438,8 +606,8 @@
 <p>Another way to state the separation hypothesis is that if households have full access to markets then marginal production decisions should not depend on their owners’  preferences in consumption or their ownership of tradable factors.  When markets are complete then production decisions will be separable, the price mechanism will equalize the marginal products of factors across uses, and the initial distribution of tradable factors should not matter for allocative efficiency  –  the first and second welfare theorems will hold.</p>
 <p>Much of modern micro-development, since at least the mid 1960s has however been concerned with how transactions costs, asymmetric information, or costly enforcement and conflict can lead to market frictions and imperfections that make production decisions non-separable.  Then the initial distribution of property rights (over land and other tradable factors) may in fact matter for determining the patterns of production organization and its efficiency in general equilibrium.</p>
 <p>One good early general equilibrium modeling of an economy where the the initial distribution of assets affects the structure and efficiency of production organization is Eswaran and Kotwal’s (1986) paper on “Access to Capital and Agrarian production organization.” This explores how the combination of transaction costs in labor hiring and in access to capital can lead to a theory of endogenous class structure or occupational choice and how this class structure can change dramatically depending on the initial distribution of property rights.</p>
-<div class="section" id="the-chayanovian-household">
-<h2>The Chayanovian Household<a class="headerlink" href="#the-chayanovian-household" title="Permalink to this headline">¶</a></h2>
+<section id="the-chayanovian-household">
+<h2>The Chayanovian Household<a class="headerlink" href="#the-chayanovian-household" title="Permalink to this headline">#</a></h2>
 <p>We’ll start with a non-separable model, inspired by the work of the Russian agronomist Alexander Chayanov whose early 20th century ideas on “the peasant economy” became widely influential in anthropology, economics, and other fields.  Chayanov played a role in early Soviet agrarian reforms but his focus on the importance of the household economy led him to be (presciently) skeptical of the appropriateness and efficiency of large-scale Soviet farms. He was arrested, sent to a labor camp, and later executed.</p>
 <p>The following model is not anywhere as rich as Chayanov’s description of the peasant household economy but a stripped down version closer in spirit to Amartya Sen’s (1966) adaptation.</p>
 <p>Farm household <span class="math notranslate nohighlight">\(i\)</span> has land and labor endowments <span class="math notranslate nohighlight">\((\bar T_i, \bar L_i )\)</span>.  We can assume that it can buy and sell the agricultural product at a market price <span class="math notranslate nohighlight">\(p\)</span> but in practice we will model the household as self-sufficient and cut-off from land and labor factor markets.  The household (which we treat as a single decision-making unit for now) allocates labor maximizes utility over consumption and leisure</p>
@@ -472,9 +640,9 @@ $<span class="math notranslate nohighlight">\(U(c,l) = c^\beta l^{1-\beta}\)</sp
 <div class="math notranslate nohighlight">
 \[l^* = \frac{a \cdot \bar L}{1+a} \]</div>
 <p>where <span class="math notranslate nohighlight">\(a=\frac{1-\beta}{\beta \cdot (1-\alpha)}\)</span></p>
-</div>
-<div class="section" id="graphical-analysis">
-<h2>Graphical analysis<a class="headerlink" href="#graphical-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="graphical-analysis">
+<h2>Graphical analysis<a class="headerlink" href="#graphical-analysis" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">farmhh</span> <span class="kn">import</span> <span class="o">*</span>
@@ -506,9 +674,9 @@ shadow price labor: 0.87
 <img alt="../_images/FarmHousehold_21_1.png" src="../_images/FarmHousehold_21_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="inverse-farm-size-productivity-relationship">
-<h2>Inverse farm size productivity relationship<a class="headerlink" href="#inverse-farm-size-productivity-relationship" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inverse-farm-size-productivity-relationship">
+<h2>Inverse farm size productivity relationship<a class="headerlink" href="#inverse-farm-size-productivity-relationship" title="Permalink to this headline">#</a></h2>
 <p>For this non-separable household, if there is no market for land or labor, each household will farm as much land as it owns. We find thecommonly found inverse relationship between farm size and productivity: output per hectare is higher on smaller farms (here for the obvious reason that there will be more labor per unit of land).  Households with larger farms enjoy higher marginal products of labor – a higher shadow price of labor, but lower marginal product of land.</p>
 <p>These two relationships can be seen below on this two-axis plot.</p>
 <div class="cell tag_hide-input docutils container">
@@ -546,9 +714,9 @@ shadow price labor: 0.87
 {"model_id": "f9138df61f1c4c3e8e8e496cbf34cb90", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-</div>
-<div class="section" id="the-separable-farm-household">
-<h2>The Separable Farm Household<a class="headerlink" href="#the-separable-farm-household" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-separable-farm-household">
+<h2>The Separable Farm Household<a class="headerlink" href="#the-separable-farm-household" title="Permalink to this headline">#</a></h2>
 <p>Consider next the case of the household that can buy or sell output on the product and hire in or hire out on land and labor markets.</p>
 <p>The household can buy and sell the consumption good at market price <span class="math notranslate nohighlight">\(p\)</span> and buy or sell labor at market wage <span class="math notranslate nohighlight">\(w\)</span>.   Hired labor and own household labor are assumed to be perfect substitutes.  To keep the analysis a little bit simpler and fit everything on a single graph we’ll assume that the market for land leases remains closed. However it is easy to show that for a linear homogenous production function this will not matter for allocative efficiency – it will be enough to have a working competitive labor market for the marginal product of land and labor to equalize across farms.</p>
 <p>When the farm household is a price-taker on all markets like this, farm production decisions become ‘separable’ from farm consumption decisions. The farm household can make its optimal decisions as a profit-maximizing farm and then separately choose between consumption and leisure subject to an income constraint.</p>
@@ -564,8 +732,8 @@ p \cdot c + w \cdot l \leq \Pi (T_i,w,p) + w \cdot \bar L_i
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Pi (T_i,w,p) = p \cdot F(T_i,L^*_i) - w \cdot L^*_i\)</span> is the maximized value of farm profits and <span class="math notranslate nohighlight">\(L^*_i\)</span> is the optimal quantity of labor that achieves that maximum. This states that what the household spends on consumption and leisure cannot exceed total income.  The household ‘purchases’ leisure at the market wage rate since the opportunity cost of each hour of leisure is given by the market wage that could have been earned with tat hour.</p>
 <p>The farm household can be thought of as maximizing profits by choosing an optimal labor input into the farm <span class="math notranslate nohighlight">\(L^*_i\)</span> which can be satisfied with own and/or hired labor.</p>
-<div class="section" id="the-efficient-competitive-farm">
-<h3>The efficient competitive farm<a class="headerlink" href="#the-efficient-competitive-farm" title="Permalink to this headline">¶</a></h3>
+<section id="the-efficient-competitive-farm">
+<h3>The efficient competitive farm<a class="headerlink" href="#the-efficient-competitive-farm" title="Permalink to this headline">#</a></h3>
 <p>As a production enterprise, the farm acts to maximize farm profits <span class="math notranslate nohighlight">\(pF(\bar T_i,L_i) - w \cdot L_i \)</span>. The first-order necessary condition for an interior optimum is:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -634,16 +802,16 @@ p \cdot F_L (\bar T_i,L) = w
 {"model_id": "5d784f1123734a3ea29235c01acffdb8", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-</div>
-<div class="section" id="no-inverse-farm-size-productivity-relationship">
-<h3>No Inverse farm size productivity relationship!<a class="headerlink" href="#no-inverse-farm-size-productivity-relationship" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="no-inverse-farm-size-productivity-relationship">
+<h3>No Inverse farm size productivity relationship!<a class="headerlink" href="#no-inverse-farm-size-productivity-relationship" title="Permalink to this headline">#</a></h3>
 <p>Since every farm takes the market wage as given the marginal product of labor will be equalized across farms. The shadow price of labor will equal the market wage on all farms, regardless of their land size. The land labor ratio and hence also the marginal product of land will also equalize across farms so output per unit land will also remain constant.</p>
 <p>The next section describes some empirical tests of the separation hypothesis as well as models with ‘selective-separability’ where missing markets and/or transactions costs end up determining that, depending on their initial ownership of assets, some households may face different factor shadow prices depending on whether they are buyers or sellers or non-participants on factor markets.</p>
 <p>This last example should drive home the point that when the farm household’s optimization problem is separable the farm’s optimal choice of inputs will be independent of both household characteristics <em>and</em> it’s endownment of <em>tradable</em> factors such as land and labor.</p>
 <p>In this last example when we shut down the labor market and introduce a transaction wedge on the market for land we create a non-separable region of autarkic or non-transacting households (shaded above).   A framework such as this would generate data that displays the classic inverse farm-size productivity relationship.  Farms that lease in land are smaller and have higher output per hectare than larger farms that lease land out and within the autarky zone farm size is increasing in the size of the land endowment and the shadow price (and hence output per unit land) falling.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
@@ -673,9 +841,11 @@ p \cdot F_L (\bar T_i,L) = w
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Coase.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -691,26 +861,28 @@ p \cdot F_L (\bar T_i,L) = w
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Jonathan Conning<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan Conning<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

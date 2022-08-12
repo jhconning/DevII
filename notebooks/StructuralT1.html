@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Structural Transformation Notes &#8212; Dev II - Development Notebooks</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Harris-Todaro Model" href="HarrisTodaro.html" />
@@ -64,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +109,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Dev II - Development Notebooks
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Dev II - Development Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development Topics
  </span>
@@ -270,112 +287,213 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/StructuralT1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/jhconning/DevII"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jhconning/DevII/main?urlpath=tree/notebooks/StructuralT1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/jhconning/DevII/blob/main/notebooks/StructuralT1.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jhconning/DevII/main?urlpath=tree/notebooks/StructuralT1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jhconning/DevII/blob/main/notebooks/StructuralT1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/jhconning/DevII"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/StructuralT1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#market-clearing-neo-classical-models">
    Market Clearing Neo-Classical Models
@@ -425,17 +543,82 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Structural Transformation Notes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#market-clearing-neo-classical-models">
+   Market Clearing Neo-Classical Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#push-and-or-pull">
+     Push and/or Pull
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-open-economy-with-homothetic-preferences">
+     The Open Economy with Homothetic Preferences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-homothetic-preferences">
+     Non-homothetic preferences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#closed-economy">
+     Closed Economy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#productivity-growth-caused-by-structural-change">
+     Productivity growth caused by Structural Change
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impediments-to-structural-change">
+     Impediments to structural change
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spillovers-complementarities-and-multiple-equilibria">
+     Spillovers, Complementarities, and Multiple Equilibria
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-cited">
+   References Cited
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="structural-transformation-notes">
-<h1>Structural Transformation Notes<a class="headerlink" href="#structural-transformation-notes" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="structural-transformation-notes">
+<h1>Structural Transformation Notes<a class="headerlink" href="#structural-transformation-notes" title="Permalink to this headline">#</a></h1>
 <p>Below some brief notes on general equilibrium modeling of structural transformation.  Some of the presentation illustrates and expands upon this short useful survey:</p>
 <blockquote>
 <div><p>Matsuyama, K., 2008. Structural change. in Durlauf and Blume eds. <em>The new Palgrave dictionary of economics</em> 2, pp.</p>
@@ -454,8 +637,8 @@
 <li><p>Spillovers, Complementarities, and Multiple Equilibria</p></li>
 </ul>
 <hr class="docutils" />
-<div class="section" id="market-clearing-neo-classical-models">
-<h2>Market Clearing Neo-Classical Models<a class="headerlink" href="#market-clearing-neo-classical-models" title="Permalink to this headline">¶</a></h2>
+<section id="market-clearing-neo-classical-models">
+<h2>Market Clearing Neo-Classical Models<a class="headerlink" href="#market-clearing-neo-classical-models" title="Permalink to this headline">#</a></h2>
 <p>Here we seek to explain structural transformation and the accompanying movement of labor out of agriculture and into other sectors in a market-clearing neo-classical model with no market failures.  In these model the marginal value product of labor is the same in both agriculture and manufacturing, hence there is no ‘dualism’ due to market frictions of one kind or another.</p>
 <p>Matsuyama builds a very simple neo-classical model with two sectors (in effect a specific factors model).</p>
 <p><strong>Production</strong></p>
@@ -515,16 +698,16 @@ A_1 F_1^\prime (n) = p A_2 F_2^\prime (1-n)
 <img alt="../_images/StructuralT1_7_0.png" src="../_images/StructuralT1_7_0.png" />
 </div>
 </div>
-<div class="section" id="push-and-or-pull">
-<h3>Push and/or Pull<a class="headerlink" href="#push-and-or-pull" title="Permalink to this headline">¶</a></h3>
+<section id="push-and-or-pull">
+<h3>Push and/or Pull<a class="headerlink" href="#push-and-or-pull" title="Permalink to this headline">#</a></h3>
 <p>The large literature on structural transformation often distinguishes between forces that ‘Push’ or ‘Pull’ labor out of agriculture.</p>
 <p>‘Pull’ could come about, for example, via an increase over time of the relative price of manufactures <span class="math notranslate nohighlight">\(p\)</span>, or an increase in relative TFP <span class="math notranslate nohighlight">\(A_2/A_1\)</span>. These have the effect of shifting out the demand for labor (the marginal value product or labor curve <span class="math notranslate nohighlight">\(p A_2 F_2^\prime (1-n)\)</span> relative to that in agriculture, leading to an incipient rise in the manufacturing wage that transforms the economy by attracting labor to that sector.</p>
 <p>As demonstrated below, it’s easy to illustrate Pull effects in this economy with standard homothetic preferences in either the open or closed economy.</p>
 <p>The ‘Push’ argument is associated the idea that rises in agricultural productivity <span class="math notranslate nohighlight">\(A_1\)</span> will mean that more food can be produced with fewer workers and therefore that labor can be ‘released’ from agriculture to other sectors. A related prevalent view is than an ‘agricultural revolution’ is often a prior and necessary condition for an industrial revolution.</p>
 <p>It turns out one has to be a bit harder to get this effect to emerge in this standard neo-classical model because, as we’ve just argued, raising the relative productivity in a sector tends <em>increase</em> demand for labor unless the relative price of the good happens to simultaneously fall by enough to reverse that effect. As we’ll show one way to engineer such an effect is to assume non-homothetic preferences to rise to a form of Engel’s law or that manufactures have a higher income elasticity of demand, such that the agricultural terms of trade deteriorate against agriculture as incomes expand.</p>
-</div>
-<div class="section" id="the-open-economy-with-homothetic-preferences">
-<h3>The Open Economy with Homothetic Preferences<a class="headerlink" href="#the-open-economy-with-homothetic-preferences" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-open-economy-with-homothetic-preferences">
+<h3>The Open Economy with Homothetic Preferences<a class="headerlink" href="#the-open-economy-with-homothetic-preferences" title="Permalink to this headline">#</a></h3>
 <p>In the open-economy version of this model, the relative price of manufactured goods <span class="math notranslate nohighlight">\(p\)</span> is set and fixed on world markets and hence does not change during the period of analysis. We can focus on the optimum production allocation without worrying about preferences, because agents first maximize the value of income at world prices and then choose optimum consumption baskets.</p>
 <p>We can plot labor demand in each sector and solve for the equilibrium labor allocation <span class="math notranslate nohighlight">\(n^*\)</span> that solves:</p>
 <div class="math notranslate nohighlight">
@@ -577,9 +760,9 @@ A_1 F_1^\prime (n) = p A_2 F_2^\prime (1-n)
 </div>
 </div>
 <p>Exogenously driven increases in the relative productivity of manufactures drives this ‘pull’ effect. As Matsuyama explains, this is the sort of mechanism envisioned by Lewis (1954) although the Lewis model also has a form of dualism not captured here.  In particular, we can see (from the diagram above) that in these models the expansion of one sector can be choked off by a rising wage. Lewis’ assumption of “unlimited supplies of labor” in agriculture amounts to saying that there will be a very elastic supply of labor aso wages will not be fast to rise.</p>
-</div>
-<div class="section" id="non-homothetic-preferences">
-<h3>Non-homothetic preferences<a class="headerlink" href="#non-homothetic-preferences" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="non-homothetic-preferences">
+<h3>Non-homothetic preferences<a class="headerlink" href="#non-homothetic-preferences" title="Permalink to this headline">#</a></h3>
 <p>In a closed economy the relative price <span class="math notranslate nohighlight">\(p\)</span> is determined endogenously by a tangency between the PPF and the representative indifference curve. As mentioned above, we’ll need non-homothetic preferences in order to get the kind of ‘Push’ effect used in Gollin et al (2002):</p>
 <p>The consumer has Stone-Geary preferences of the form:</p>
 <div class="math notranslate nohighlight">
@@ -617,9 +800,9 @@ C_1 =\gamma + (\beta p) C_2
 <img alt="../_images/StructuralT1_19_0.png" src="../_images/StructuralT1_19_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="closed-economy">
-<h3>Closed Economy<a class="headerlink" href="#closed-economy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="closed-economy">
+<h3>Closed Economy<a class="headerlink" href="#closed-economy" title="Permalink to this headline">#</a></h3>
 <p>We’re looking for a tangency between the PPF and the representative agent’s indifference curve, equal to the common price ratio. This <span class="math notranslate nohighlight">\(MRS = p= MPT\)</span> condition can be written:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -710,9 +893,9 @@ A1=2, n=0.48, p=1.63
 <img alt="../_images/StructuralT1_28_1.png" src="../_images/StructuralT1_28_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="productivity-growth-caused-by-structural-change">
-<h3>Productivity growth caused by Structural Change<a class="headerlink" href="#productivity-growth-caused-by-structural-change" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="productivity-growth-caused-by-structural-change">
+<h3>Productivity growth caused by Structural Change<a class="headerlink" href="#productivity-growth-caused-by-structural-change" title="Permalink to this headline">#</a></h3>
 <p>Matsuyama adds dynamics to the sort of model described above by assuming that TFP growth in manufacturing might respond to “the stock of experience accumulated [in that sector]… through learning-by-doing.”  He captures this by positing that TFP in the sector in period <span class="math notranslate nohighlight">\(t\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -733,29 +916,29 @@ A_1 F_1^\prime (n_t) = p A(Q_t) F_2^\prime (1-n_t)
 <p>As discussed before, raising <span class="math notranslate nohighlight">\(A_1\)</span> implies higher <span class="math notranslate nohighlight">\(n_t\)</span> for any level of <span class="math notranslate nohighlight">\(Q_t\)</span>.  If the economy is already passed the threshold <span class="math notranslate nohighlight">\(H(1-n_t)&gt;0\)</span> which leads to growth in manufacturing and hence pull out of agriculture, and the effect is self-reinforcing.</p>
 <p>However if below the threshold (i.e. <span class="math notranslate nohighlight">\(n_t&gt;n_c\)</span>) and hence <span class="math notranslate nohighlight">\(H(1-n_t)&lt;0\)</span> anything that stimulates agriculture, be it productivity growth or a rise in the relative price of agricultural products, will lead to productivity <em>decline</em> in industry and a steady increase in agricultural employment <span class="math notranslate nohighlight">\(n_t\)</span>.</p>
 <p>This is a version of the so called <em>staple-trap,</em> <em>resource curse,</em> or <em>dutch disease</em>.  Matsuyama (1992) models this type of possibility in richer detail.</p>
-</div>
-<div class="section" id="impediments-to-structural-change">
-<h3>Impediments to structural change<a class="headerlink" href="#impediments-to-structural-change" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="impediments-to-structural-change">
+<h3>Impediments to structural change<a class="headerlink" href="#impediments-to-structural-change" title="Permalink to this headline">#</a></h3>
 <p>Many studies have modeled impediments to the re-allocation of labor across sectors.</p>
 <p>The most famous of these is the Lewis model which assumes workers in the agricultural sector earn an average product of labor there, leading to overemployment in the sector.  We’ll see several models that try to make sense of this, for example models that attribute this to land property rights insecurity.</p>
 <p>Hayashi and Prescott (2008) argue that agricultural employment in Japan remained virtually constant at 14 million persons from 1885 to WWII (see image below) despite significant expansion in industrial technology capacity in that period. They argue that labor could not easily leave agriculture due to patriarchal customs and norms that made it hard for children of agricultural households to leave the parental household).  Using a calibrated general equilibrium model, the authors argue that the lifting of that barrier in the post-war era (due to various factors including legislation surrounding deep land reforms) explains a good part of the post-war Japanese miracle.</p>
 <a class="bg-primary reference internal image-reference" href="../_images/Japan_agemp.png"><img alt="Japan Ag employment" class="bg-primary" src="../_images/Japan_agemp.png" style="width: 600px;" /></a>
 <p>There are many other models with barriers or frictions in the structural transformation.  One famous model that received a lot of attentiun is the Harris and Todaro (1970) model.  See the separate notebook on this model.</p>
-</div>
-<div class="section" id="spillovers-complementarities-and-multiple-equilibria">
-<h3>Spillovers, Complementarities, and Multiple Equilibria<a class="headerlink" href="#spillovers-complementarities-and-multiple-equilibria" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="spillovers-complementarities-and-multiple-equilibria">
+<h3>Spillovers, Complementarities, and Multiple Equilibria<a class="headerlink" href="#spillovers-complementarities-and-multiple-equilibria" title="Permalink to this headline">#</a></h3>
 <p>Coming soon.</p>
-</div>
-</div>
-<div class="section" id="references-cited">
-<h2>References Cited<a class="headerlink" href="#references-cited" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="references-cited">
+<h2>References Cited<a class="headerlink" href="#references-cited" title="Permalink to this headline">#</a></h2>
 <p>Harris, J.R., Todaro, M.P., 1970. Migration, unemployment and development: a two-sector analysis. <em>The American economic review</em> 126–142.</p>
 <p>Hayashi, F., Prescott, E.C., 2008. The depressing effect of agricultural institutions on the prewar Japanese economy. <em>Journal of political Economy</em> 116, 573–632.</p>
 <p>Lewis, W.A., 1954. Economic development with unlimited supplies of labour. <em>The Manchester School</em> 22, 139–191.</p>
 <p>Matsuyama, K., 2008. Structural change. <em>The new Palgrave dictionary of economics</em> 2.</p>
 <p>Matsuyama, K., 1992. Agricultural productivity, comparative advantage, and economic growth. <em>Journal of economic theory</em> 58, 317–334.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -779,9 +962,11 @@ A_1 F_1^\prime (n_t) = p A(Q_t) F_2^\prime (1-n_t)
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="SFM.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -797,26 +982,28 @@ A_1 F_1^\prime (n_t) = p A(Q_t) F_2^\prime (1-n_t)
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Jonathan Conning<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan Conning<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
